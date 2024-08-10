@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.wave-1 {
+    background-image: url('./assets/svg-waves/waves-1.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .wave-2 {
+    background-image: url('./assets/svg-waves/waves-2.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .wave-3 {
+    background-image: url('./assets/svg-waves/waves-3.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .wave-4 {
+    background-image: url('./assets/svg-waves/waves-4.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .wave-5 {
+    background-image: url('./assets/svg-waves/waves-5.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .wave-6 {
+    background-image: url('./assets/svg-waves/waves-6.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .wave-7 {
+    background-image: url('./assets/svg-waves/waves-7.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .wave-8 {
+    background-image: url('./assets/svg-waves/waves-8.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .wave-9 {
+    background-image: url('./assets/svg-waves/waves-9.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .wave-1- {
+    background-image: url('./assets/svg-waves/waves-10.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
