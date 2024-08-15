@@ -6,7 +6,7 @@ function App() {
   return (
     <main className="relative">
       <Nav/>
-      <section>
+      <section className="min-h-screen overflow-hidden">
         <HomePage />
       </section>
     </main>

@@ -7,7 +7,7 @@ import {wave1,
     wave7,
     wave8,
     wave9,
-    wave10 } from './svg-waves';
+    wave10 } from './assets/svg-waves';
 
 
 export const waves = [
