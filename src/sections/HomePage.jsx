@@ -1,29 +1,22 @@
-
-import React, { useState, useEffect } from 'react';
-import classNames from 'classnames';
-
+import WaveSVG from '../components/waveBackgroundSVG';
+import Wavify from 'react-wavify';
 
 const HomePage = () => {
-  const backgrounds = ['bg-wave1', 'bg-wave2', 'bg-wave3', 'bg-wave4', 'bg-wave5', 'bg-wave6', 'bg-wave7', 'bg-wave8', 'bg-wave9', 'bg-wave10']
-  const [currentBackground, setCurrentBackground] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentBackground((prev) => (prev + 1) % 10);
-    }, 500); // Change every 3 seconds
-
-    return () => clearInterval(interval); // Cleanup the interval on unmount
-  }, []);
-
   return (
-    <section className={classNames('absolute inset-0 bg-cover bg-wave1 bg-bottom overflow-hidden bg-no-repeat transition-all',
-      backgrounds[currentBackground]
-    )}>
-      <div className='relative flex justify-center items-center'>
-        <h1 className='text-white text-4xl font-montserrat font-bold mt-10'>
+    <section className='relative w-screen h-screen overflow-hidden bg-background'>
+      <Wavify 
+        fill="3b4374"
+      />
+      <div className='relative flex flex-col justify-center items-center h-full'>
+        <p className='text-gray-500 text-center'>
+          Hello! I am
+        </p>
+
+        <h1 className='text-gray-500 text-4xl font-montserrat font-bold'>
           Sye Phasuk
         </h1>
       </div>
+      
     </section>
   )
 }

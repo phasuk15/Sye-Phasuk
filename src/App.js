@@ -4,10 +4,13 @@ import Nav from "./sections/Nav";
 
 function App() {
   return (
-    <main className="relative">
+    <main className="">
       <Nav/>
-      <section className="min-h-screen overflow-hidden">
+      <section className="">
         <HomePage />
+      </section>
+      <section>
+
       </section>
     </main>
   );
