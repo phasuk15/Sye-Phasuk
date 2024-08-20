@@ -1,7 +1,9 @@
 
 import React, { useState } from 'react';
-import HomePage from "./sections/HomePage";
 import Nav from "./sections/Nav";
+import HomePage from "./sections/HomePage";
+import Aboutme from './sections/Aboutme';
+import Projects from './sections/Projects';
 
 function App() {
 
@@ -17,11 +19,13 @@ function App() {
       <section className="">
         <HomePage paused={paused}/>
       </section>
-      <section>
-
+      <section className='bg-wave-blue padding'>
+        <Aboutme />
+      </section>
+      <section className='bg-wave-blue padding'>
+      <Projects />
       </section>
     </main>
   );
 }
-
 export default App;

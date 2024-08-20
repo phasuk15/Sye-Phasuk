@@ -22,6 +22,7 @@ module.exports = {
       colors: {
         'primary': "#ECEEFF",
         "background-colour": "#001220",
+        'wave-blue': "#3b4374"
       },
       boxShadow: {
         '3xl': '0 10px 40px rgba(0, 0, 0, 0.1)'
@@ -29,18 +30,6 @@ module.exports = {
       screens: {
         "wide": "1440px"
       },
-      backgroundImage: {
-        'wave1': "url('./assets/svg-waves/waves-1.svg')",
-        'wave2': "url('./assets/svg-waves/waves-2.svg')",
-        'wave3': "url('./assets/svg-waves/waves-3.svg')",
-        'wave4': "url('./assets/svg-waves/waves-4.svg')",
-        'wave5': "url('./assets/svg-waves/waves-5.svg')",
-        'wave6': "url('./assets/svg-waves/waves-6.svg')",
-        'wave7': "url('./assets/svg-waves/waves-7.svg')",
-        'wave8': "url('./assets/svg-waves/waves-8.svg')",
-        'wave9': "url('./assets/svg-waves/waves-9.svg')",
-        'wave10': "url('./assets/svg-waves/waves-10.svg')",
-      }
     },
   },
   plugins: [],

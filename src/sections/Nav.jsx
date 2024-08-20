@@ -1,5 +1,5 @@
 
-import { waveIcon } from "../assets/icons"
+import WaveIcon from "../components/waveIcon"
 
 const Nav = ({paused, togglePaused}) => {
 
@@ -8,19 +8,15 @@ const Nav = ({paused, togglePaused}) => {
         <nav className='flex justify-between items-center max-container'> 
             <ul className='flex-1 flex justify-end items-center gap-16 text-gray-400'>
               <li>Home</li>
+              <li>About me</li>
               <li>Projects</li>
               <li>Contacts</li>
               <button onClick={togglePaused}
-                className={`px-4 py-2 rounded text-white 
-                  ${paused ? 'bg-blue-500' : 'bg-gray-500'} 
-                  hover:${paused ? 'bg-blue-700' : 'bg-gray-700'}`}>
-                  {/* {paused ? 'Resume Waves' : 'Pause Waves'} */}
-                  <img 
-                    src={waveIcon}
-                    alt='wave-icon'
-                    width={30}
-                    height={30}
-                    className="object-contain"
+                className={`px-4 py-2 rounded-full text-white 
+                  ${paused ? 'bg-none' : 'bg-'} 
+                  hover:bg-gray-700`}>
+                  <WaveIcon 
+                    className="w-7 h-7"
                   />
               </button>
             </ul>
