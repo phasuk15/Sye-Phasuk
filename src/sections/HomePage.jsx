@@ -1,6 +1,6 @@
 import Waves from '../components/Waves';
 
-const HomePage = () => {
+const HomePage = ({paused}) => {
   return (
     <section className='relative w-screen h-screen overflow-hidden bg-background-colour'>
       <div className='relative flex flex-col justify-center items-center h-full'>
@@ -13,7 +13,7 @@ const HomePage = () => {
         </h1>
       </div>
       <div className='relative h-[50px]'>
-        <Waves />
+        <Waves paused={paused}/>
       </div>
 
     </section>

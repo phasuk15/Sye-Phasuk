@@ -1,13 +1,21 @@
 
+import React, { useState } from 'react';
 import HomePage from "./sections/HomePage";
 import Nav from "./sections/Nav";
 
 function App() {
+
+  const [paused, setPaused] = useState(false);
+
+  const togglePaused = () => {
+    setPaused(!paused);
+  };
+
   return (
     <main className="">
-      <Nav/>
+      <Nav paused={paused} togglePaused={togglePaused} />
       <section className="">
-        <HomePage />
+        <HomePage paused={paused}/>
       </section>
       <section>
 

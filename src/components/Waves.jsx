@@ -1,12 +1,12 @@
 import Wavify from "react-wavify";
 
-const WaveComponent = () => {
+const WaveComponent = ({paused}) => {
   return (
     <div>
         <Wavify
             className='absolute bottom-0 w-full'
             fill="#3b4374"
-            paused={false}
+            paused={paused}
             options={{
                 height: 20,
                 amplitude: 40,
@@ -18,7 +18,7 @@ const WaveComponent = () => {
         <Wavify
             className='absolute bottom-0 w-full'
             fill="#645d92"
-            paused={false}
+            paused={paused}
             options={{
                 height: 20,
                 amplitude: 35,
@@ -30,7 +30,7 @@ const WaveComponent = () => {
         <Wavify
             className='absolute bottom-0 w-full'
             fill="#8e79b1"
-            paused={false}
+            paused={paused}
             options={{
                 height: 15,
                 amplitude: 30,
@@ -42,7 +42,7 @@ const WaveComponent = () => {
         <Wavify
             className='absolute bottom-0 w-full'
             fill="#b996cf"
-            paused={false}
+            paused={paused}
             options={{
                 height: 10,
                 amplitude: 25,
@@ -54,7 +54,7 @@ const WaveComponent = () => {
         <Wavify
             className='absolute bottom-0 w-full'
             fill="#e5b4ed"
-            paused={false}
+            paused={paused}
             options={{
                 height: 5,
                 amplitude: 20,
