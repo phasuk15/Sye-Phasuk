@@ -22,7 +22,8 @@ module.exports = {
       colors: {
         'primary': "#ECEEFF",
         "background-colour": "#001220",
-        'wave-blue': "#3b4374"
+        'wave-blue': "#3b4374",
+        'light-pink': "#e5b4ed"
       },
       boxShadow: {
         '3xl': '0 10px 40px rgba(0, 0, 0, 0.1)'
