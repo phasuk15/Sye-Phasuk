@@ -13,17 +13,24 @@ module.exports = {
       '2xl': ['24px', '29.26px'],
       '3xl': ['28px', '50px'],
       '4xl': ['48px', '58px'],
+      '5xl': ['60px', '70px'],
+      '6xl': ['72px', '82px'],
       '8xl': ['96px', '106px']
     },
     extend: {
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
+        fira: ['Fira Sans', 'sans-serif'],
       },
       colors: {
         'primary': "#ECEEFF",
         "background-colour": "#001220",
         'wave-blue': "#3b4374",
-        'light-pink': "#e5b4ed"
+        'blue-purple': "#645d92",
+        'light-purple': "#8e79b1",
+        'purple-pink': "#b996cf",
+        'light-pink': "#e5b4ed",
+        'deep-blue': "#150e40"
       },
       boxShadow: {
         '3xl': '0 10px 40px rgba(0, 0, 0, 0.1)'
@@ -31,6 +38,9 @@ module.exports = {
       screens: {
         "wide": "1440px"
       },
+      animation: {
+        'bounce-once': 'bounce-once 1s ease',
+      }
     },
   },
   plugins: [],

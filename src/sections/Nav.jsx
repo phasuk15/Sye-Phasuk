@@ -1,5 +1,5 @@
 
-import WaveIcon from "../components/waveIcon"
+import WaveIcon from "../components/icons/waveIcon"
 import hamburger from "../assets/icons/hamburger.svg"
 import { Link } from 'react-router-dom';
 
@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Nav = ({paused, togglePaused}) => {
 
   return (
-    <header className='fixed top-0 padding-x py-5 z-50 left-0 w-full'> 
+    <header className='fixed top-0 padding-x py-5 z-50 left-0 w-full backdrop-blur-md'> 
         <nav className='flex justify-between items-center max-container z-50'> 
             <button onClick={togglePaused}
               className={`px-4 py-2 rounded-full text-white 

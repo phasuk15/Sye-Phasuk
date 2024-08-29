@@ -5,6 +5,9 @@ import Nav from "./sections/Nav";
 import HomePage from "./sections/HomePage";
 import Aboutme from './sections/Aboutme';
 import Projects from './sections/Projects';
+import Gallery from './sections/Gallery';
+import Footer from './sections/Footer';
+
 
 function App() {
 
@@ -20,7 +23,7 @@ function App() {
 
   return (
     <Router>
-      <main className="">
+      <main className="w-screen h-screen">
         <Nav paused={paused} togglePaused={togglePaused} />
         <section className="">
           <HomePage paused={paused}/>
@@ -28,8 +31,14 @@ function App() {
         <section className='bg-wave-blue padding'>
           <Aboutme />
         </section>
-        <section className='bg-wave-blue padding'>
-        <Projects />
+        <section className='bg-wave-blue '>
+          <Projects />
+        </section>
+        <section className='bg-black'>
+          <Gallery />
+        </section>
+        <section className='bg-black'>
+          <Footer />
         </section>
       </main>
     </Router>

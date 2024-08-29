@@ -8,8 +8,8 @@ const WaveComponent = ({paused}) => {
             fill="#3b4374"
             paused={paused}
             options={{
-                height: 20,
-                amplitude: 40,
+                height: 30,
+                amplitude: 50,
                 speed: 0.15,
                 points: 4,
             }}
@@ -20,7 +20,7 @@ const WaveComponent = ({paused}) => {
             fill="#645d92"
             paused={paused}
             options={{
-                height: 20,
+                height: 25,
                 amplitude: 35,
                 speed: 0.13,
                 points: 4,
