@@ -7,8 +7,8 @@ const Projects = () => {
       <h3 className="font-montserrat text-white text-4xl font-bold">
         Projects
       </h3>
-      <div className="mt-10 gap-10 flex flex-wrap justify-center">
-        <ProjectCard />
+      <div className="padding-y gap-10 flex flex-wrap justify-center">
+        <ProjectCard title="Herb and Spice"/>
         <ProjectCard />
         <ProjectCard />
       </div>

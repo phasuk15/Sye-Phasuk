@@ -13,7 +13,7 @@ const Aboutme = () => {
         <h2 className="text-white text-4xl font-bold font-montserrat text-center">
           About <span className="text-light-pink">Me</span>
         </h2>
-        <div className="flex gap-10 justify-around items-start w-full max-lg:flex-col mt-7 font-fira">
+        <div className="flex gap-10 justify-around items-start w-full max-lg:flex-col padding-y font-fira">
           <div>
             <p className="text-xl font-bold text-white italics">
               A little about me ...
@@ -38,7 +38,7 @@ const Aboutme = () => {
               <InstagramIcon/>
               <YoutubeIcon/>
             </button>
-            <button className='flex justify-center items-center gap-2 px-5 py-3 border font-montserrat rounded-md text:lg leading-none mt-8 hover:border-light-pink hover:filter hover:glow'>
+            <button className='flex justify-center items-center gap-2 px-5 py-3 border font-montserrat rounded-md text:lg leading-none mt-8 hover:border-light-pink border-current hover:filter hover:glow'>
               Download CV
             </button>
           </div>

@@ -54,6 +54,10 @@
     color: #fff; /* Base color of the text */
     box-shadow: 0 0px 5px #e5b4ed;
   }
+  .glow-project {
+    color: #fff; /* Base color of the text */
+    box-shadow: 0 0px 5px #1b28b4;
+  }
 
   
   @keyframes bounce-once {
