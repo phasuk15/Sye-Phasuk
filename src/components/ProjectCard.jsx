@@ -4,9 +4,7 @@ import GithubIcon from "./icons/GithubIcon"
 
 const ProjectCard = ({img, title, description, skills=[]}) => {
   return (
-    <div className="flex-1 sm:w-[350px] sm:min-w-[350px] w-full rounded-lg shadow-3xl px-10 py-16 border-boxShadow group group-hover:bg-gray-900/50 transition-colors duration-300">
-      <Ripple />
-      
+    <div className="flex-1 sm:w-[350px] sm:min-w-[350px] w-full rounded-lg shadow-3xl px-10 py-16 border-boxShadow hover:border-blue-900 group group-hover:bg-gray-900/50 transition-colors duration-300">      
       <img
         src={img}
 

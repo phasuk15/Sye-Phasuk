@@ -25,19 +25,19 @@ function App() {
     <Router>
       <main className="w-screen h-screen">
         <Nav paused={paused} togglePaused={togglePaused} />
-        <section className="">
+        <section id="home" className="">
           <HomePage paused={paused}/>
         </section>
-        <section className='bg-wave-blue padding'>
+        <section id="about" className='bg-wave-blue padding'>
           <Aboutme />
         </section>
-        <section className='bg-wave-blue '>
+        <section id="projects" className='bg-wave-blue '>
           <Projects />
         </section>
-        <section className='padding flex bg-gradient-to-b from-deep-blue to-black'>
+        <section id="gallery" className='padding flex bg-gradient-to-b from-deep-blue to-black'>
           <Gallery />
         </section>
-        <section className='bg-black'>
+        <section id="footer" className='bg-black'>
           <Footer />
         </section>
       </main>

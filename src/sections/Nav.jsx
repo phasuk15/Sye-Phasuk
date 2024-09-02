@@ -1,10 +1,18 @@
 
 import WaveIcon from "../components/icons/waveIcon"
 import hamburger from "../assets/icons/hamburger.svg"
-import { Link } from 'react-router-dom';
+import { Link as ScrollLink} from 'react-scroll';
+import { useState } from "react";
+import Sidebar from "../components/Sidebar";
 
 
 const Nav = ({paused, togglePaused}) => {
+
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen);
+  };
 
   return (
     <header className='fixed top-0 padding-x py-5 z-50 left-0 w-full backdrop-blur-md'> 
@@ -19,12 +27,12 @@ const Nav = ({paused, togglePaused}) => {
                 />
             </button>
             <ul className='flex-1 flex justify-end items-center gap-16 text-gray-400 max-md:hidden '>
-              <Link to='/HomePage' className="hover:text-white">Home</Link>
-              <button className="hover:text-white">About me</button>
-              <button className="hover:text-white">Projects</button>
-              <button className="hover:text-white">Gallery</button>
-            </ul> 
-            <button className='hidden max-md:block'>
+              <ScrollLink to="home" smooth={true} duration={500} className="hover:text-white cursor-pointer">Home</ScrollLink>
+              <ScrollLink to="about" smooth={true} duration={500} className="hover:text-white cursor-pointer">About me</ScrollLink>
+              <ScrollLink to="projects" smooth={true} duration={500} className="hover:text-white cursor-pointer">Projects</ScrollLink>
+              <ScrollLink to="gallery" smooth={true} duration={500} className="hover:text-white cursor-pointer">Gallery</ScrollLink>
+          </ul>
+            <button className='hidden max-md:block' onClick={toggleSidebar}>
               <img
                 src = {hamburger}
                 alt="hamburger"
@@ -33,6 +41,9 @@ const Nav = ({paused, togglePaused}) => {
               >
               </img>
             </button>
+            {isSidebarOpen && (
+              <Sidebar />
+            )}
         </nav>
     </header>
   )
