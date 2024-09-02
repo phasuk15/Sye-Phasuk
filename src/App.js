@@ -34,7 +34,7 @@ function App() {
         <section className='bg-wave-blue '>
           <Projects />
         </section>
-        <section className='bg-black'>
+        <section className='padding flex bg-gradient-to-b from-deep-blue to-black'>
           <Gallery />
         </section>
         <section className='bg-black'>

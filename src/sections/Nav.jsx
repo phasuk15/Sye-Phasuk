@@ -18,11 +18,11 @@ const Nav = ({paused, togglePaused}) => {
                   
                 />
             </button>
-            <ul className='flex-1 flex justify-end items-center gap-16 text-gray-400 max-md:hidden'>
-              <Link to='/HomePage' className="">Home</Link>
-              <button>About me</button>
-              <button>Projects</button>
-              <button>Gallery</button>
+            <ul className='flex-1 flex justify-end items-center gap-16 text-gray-400 max-md:hidden '>
+              <Link to='/HomePage' className="hover:text-white">Home</Link>
+              <button className="hover:text-white">About me</button>
+              <button className="hover:text-white">Projects</button>
+              <button className="hover:text-white">Gallery</button>
             </ul> 
             <button className='hidden max-md:block'>
               <img

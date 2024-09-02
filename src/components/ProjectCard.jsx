@@ -1,11 +1,35 @@
 
+import Ripple from "./Ripple"
+import GithubIcon from "./icons/GithubIcon"
 
-const ProjectCard = ({img, title, }) => {
+const ProjectCard = ({img, title, description, skills=[]}) => {
   return (
-    <div className="flex-1 sm:w-[350px] sm:min-w-[350px] w-full rounded-md shadow-3xl px-10 py-16 transition-transform bg-[#272d69] bg-gradient-to-b from-[#1a1e52] border border-transparent hover:border-current hover:glow-project">
-      <p className="font-montserrat text-base text-white">
+    <div className="flex-1 sm:w-[350px] sm:min-w-[350px] w-full rounded-lg shadow-3xl px-10 py-16 border-boxShadow group group-hover:bg-gray-900/50 transition-colors duration-300">
+      <Ripple />
+      
+      <img
+        src={img}
+
+      />
+      <p className="font-fira font-bold text-base text-white mt-5">
         {title}
       </p>
+      <p className="text-gray-400 font-archivo mt-5">
+        {description}
+      </p>
+
+    <p className="flex flex-row gap-3 justify-start flex-wrap mt-3">
+      {skills.map((skill, index) => (
+        <div key={index}>
+          <span className="text-xs border rounded-md text-gray-500 px-1 py-1 border-gray-600">
+            #{skill}
+          </span>
+        </div>
+      ))}
+    </p>
+    <div className="mt-5">
+      <GithubIcon/>
+    </div>
     </div>
   )
 }

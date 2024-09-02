@@ -1,18 +1,36 @@
+
 import ProjectCard from "../components/ProjectCard"
+import image from "../assets/images/poppy field.jpg"
 
 
 const Projects = () => {
+
+  const HBskills = [
+    "React", "Tailwind CSS"
+  ]
+
   return (
-    <section className="relative w-screen h-screen bg-gradient-to-b from-wave-blue to-deep-blue padding flex flex-col justify-center items-center">
-      <h3 className="font-montserrat text-white text-4xl font-bold">
+    <section className="relative bg-gradient-to-b from-wave-blue to-deep-blue padding flex flex-col">
+      <h3 className="font-montserrat text-white text-4xl font-bold padding-x">
         Projects
       </h3>
-      <div className="padding-y gap-10 flex flex-wrap justify-center">
-        <ProjectCard title="Herb and Spice"/>
+      <p className="text-gray-200 mt-5 font-inter padding-x text-lg">
+        Take a look at what I've been working on!
+      </p>
+      <div className="py-10 gap-10 flex flex-wrap justify-center">
+        <ProjectCard 
+          title="Herb and Spice"
+          description="A website for my family Thai restaurant." 
+          skills={HBskills} 
+          img={image}
+        />
+        <ProjectCard />
         <ProjectCard />
         <ProjectCard />
       </div>
-
+      <p className="flex justify-center text-gray-400 font-archivo mt-3 text-lg">
+        Check out more projects
+      </p>
     </section>
   )
 }

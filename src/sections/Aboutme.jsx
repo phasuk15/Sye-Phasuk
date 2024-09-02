@@ -13,9 +13,9 @@ const Aboutme = () => {
         <h2 className="text-white text-4xl font-bold font-montserrat text-center">
           About <span className="text-light-pink">Me</span>
         </h2>
-        <div className="flex gap-10 justify-around items-start w-full max-lg:flex-col padding-y font-fira">
+        <div className="flex gap-10 justify-around items-start w-full max-lg:flex-col padding-y font-inter">
           <div>
-            <p className="text-xl font-bold text-white italics">
+            <p className="text-xl font-bold text-white italics font-fira">
               A little about me ...
             </p>
             <p className="flex flex-1 text-gray-200 lg:max-w-lg mt-5">
@@ -26,13 +26,13 @@ const Aboutme = () => {
             </p>
           </div>
           <div className="flex flex-col justify-center items-start text-white">
-            <p className="font-montserrat font-bold text-xl">
+            <p className="font-archivo font-bold text-xl">
               Find me!
             </p>
             <p className='mt-5'>
               I post vlogs on my Youtube :))
             </p>
-            <button className='mt-5 flex flex-wrap gap-10 hover:border-light-purple'>
+            <button className='mt-5 flex flex-wrap gap-10'>
               <LinkedInIcon/>
               <GithubIcon/>
               <InstagramIcon/>

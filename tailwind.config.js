@@ -21,6 +21,7 @@ module.exports = {
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
         fira: ['Fira Sans', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
       },
       colors: {
         'primary': "#ECEEFF",
@@ -33,7 +34,7 @@ module.exports = {
         'deep-blue': "#150e40"
       },
       boxShadow: {
-        '3xl': '0 10px 40px rgba(0, 0, 0, 0.1)'
+        '3xl': '0 15px 40px rgba(0, 0, 0, 0.1)'
       },
       screens: {
         "wide": "1440px"
