@@ -1,11 +1,11 @@
 import * as React from "react";
 
-const InstagramIcon = (props) => (
+const InstagramIcon = ({fill, size, props}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={30}
-    height={30}
-    fill="#c7bebd" // default color
+    width={size}
+    height={size}
+    fill={fill} // default color
     viewBox="0 0 24 24"
     className="hover:fill-light-pink transition-transform duration-200 ease-in-out transform hover:scale-110"
     {...props}

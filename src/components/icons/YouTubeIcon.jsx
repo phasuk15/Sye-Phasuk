@@ -1,11 +1,11 @@
-const YoutubeIcon = ({props}) => (
+const YoutubeIcon = ({fill, hoverfill, size, props}) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={30}
-      height={30}
-      fill="#c7bebd"
+      width={size}
+      height={size}
+      fill={fill}
       viewBox="0 -3 20 20"
-       className="hover:fill-light-pink transition-transform duration-200 ease-in-out transform hover:scale-110"
+      className="hover:fill-white transition-transform duration-200 ease-in-out transform hover:scale-110"
       {...props}
     >
       <title>{"youtube [#168]"}</title>

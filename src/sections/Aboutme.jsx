@@ -33,10 +33,10 @@ const Aboutme = () => {
               I post vlogs on my Youtube :))
             </p>
             <button className='mt-5 flex flex-wrap gap-10'>
-              <LinkedInIcon/>
-              <GithubIcon/>
-              <InstagramIcon/>
-              <YoutubeIcon/>
+              <LinkedInIcon size={30} fill={"#ababab"} hoverfill={"#FFFFFF"}/>
+              <GithubIcon size={30} fill={"#ababab"}/>
+              <InstagramIcon size={30} fill={"#ababab"}/>
+              <YoutubeIcon size={30} fill={"#ababab"}/>
             </button>
             <button className='flex justify-center items-center gap-2 px-5 py-3 border font-montserrat rounded-md text:lg leading-none mt-8 hover:border-light-pink border-current hover:filter hover:glow'>
               Download CV

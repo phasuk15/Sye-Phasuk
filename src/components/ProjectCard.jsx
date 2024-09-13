@@ -26,7 +26,7 @@ const ProjectCard = ({img, title, description, skills=[]}) => {
       ))}
     </p>
     <div className="mt-5">
-      <GithubIcon/>
+      <GithubIcon size={30} fill={"gray"}/>
     </div>
     </div>
   )
