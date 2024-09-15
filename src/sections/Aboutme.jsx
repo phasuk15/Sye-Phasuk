@@ -8,9 +8,9 @@ import GithubIcon from '../components/icons/GithubIcon'
 const Aboutme = () => {
 
   return (
-    <section className="w-full max-container flex flex-col mt-20">
+    <section className="w-full max-container flex flex-col bg-wave-blue">
       <div >
-        <h2 className="text-white text-4xl font-bold font-montserrat text-center">
+        <h2 className="text-white text-4xl font-bold font-montserrat text-center pt-24">
           About <span className="text-light-pink">Me</span>
         </h2>
         <div className="flex gap-10 justify-around items-start w-full max-lg:flex-col padding-y font-inter">

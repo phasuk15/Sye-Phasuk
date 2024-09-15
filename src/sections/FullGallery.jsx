@@ -9,10 +9,10 @@ import art5 from '../assets/images/artwork5.jpg'
 import art6 from '../assets/images/artwork6.jpg'
 import art7 from '../assets/images/artwork7.jpg'
 import art8 from '../assets/images/artwork8.jpg'
+import art9 from '../assets/images/artwork9.jpg'
 import GalleryCard from '../components/GalleryCard'
 import Footer from './Footer'
 
-import HomePage from './HomePage'
 
 const FullGallery = () => {
   return (
@@ -59,6 +59,11 @@ const FullGallery = () => {
             />
             <GalleryCard 
                 img={art8}
+                height={400}
+                width={300}
+            />
+            <GalleryCard 
+                img={art9}
                 height={400}
                 width={300}
             />

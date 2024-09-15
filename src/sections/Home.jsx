@@ -28,7 +28,7 @@ const Home = () => {
         <section id="projects" className='bg-wave-blue '>
             <Projects />
         </section>
-        <section id="gallery" className='padding flex bg-gradient-to-b from-deep-blue to-background-colour'>
+        <section id="gallery" className='flex bg-gradient-to-b from-deep-blue to-background-colour'>
             <Gallery />
         </section>
         <section id="footer" className='bg-black'>

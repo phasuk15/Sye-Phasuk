@@ -1,8 +1,7 @@
 
 import WaveIcon from "../components/icons/waveIcon"
 import hamburger from "../assets/icons/hamburger.svg"
-import { Link as ScrollLink} from 'react-scroll';
-import { useState } from "react";
+import { useState } from "react";import { HashLink as Link } from 'react-router-hash-link';
 import Sidebar from "../components/Sidebar";
 
 
@@ -27,10 +26,10 @@ const Nav = ({paused, togglePaused}) => {
                 />
             </button>
             <ul className='flex-1 flex justify-end items-center gap-16 text-gray-400 max-md:hidden '>
-              <ScrollLink to="home" smooth={true} duration={500} className="hover:text-white cursor-pointer">Home</ScrollLink>
-              <ScrollLink to="about" smooth={true} duration={500} className="hover:text-white cursor-pointer">About me</ScrollLink>
-              <ScrollLink to="projects" smooth={true} duration={500} className="hover:text-white cursor-pointer">Projects</ScrollLink>
-              <ScrollLink to="gallery" smooth={true} duration={500} className="hover:text-white cursor-pointer">Gallery</ScrollLink>
+              <Link to="/#home" smooth={true} duration={500} className="hover:text-white cursor-pointer">Home</Link>
+              <Link to="/#about" smooth={true} duration={500} className="hover:text-white cursor-pointer">About me</Link>
+              <Link to="/#projects" smooth={true} duration={500} className="hover:text-white cursor-pointer">Projects</Link>
+              <Link to="/#gallery" smooth={true} duration={500} className="hover:text-white cursor-pointer">Gallery</Link>
           </ul>
             <button className='hidden max-md:block' onClick={toggleSidebar}>
               <img

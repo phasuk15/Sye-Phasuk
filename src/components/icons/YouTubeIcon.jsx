@@ -5,7 +5,7 @@ const YoutubeIcon = ({fill, hoverfill, size, props}) => (
       height={size}
       fill={fill}
       viewBox="0 -3 20 20"
-      className="hover:fill-white transition-transform duration-200 ease-in-out transform hover:scale-110"
+      className="hover:fill-light-pink transition-transform duration-200 ease-in-out transform hover:scale-110"
       {...props}
     >
       <title>{"youtube [#168]"}</title>
