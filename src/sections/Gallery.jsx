@@ -15,7 +15,7 @@ const Gallery = () => {
         <p className="text-gray-300 mt-5 font-inter padding-x text-lg ">
           I also do art! Take a look at some of my pieces :))
         </p>
-        <div className='max-container flex justify-center flew-wrap gap-9 pt-24'>
+        <div className='max-container flex justify-center flew-wrap gap-9 pt-20'>
           <GalleryCard 
             img={art1}
             height={400}
@@ -32,9 +32,12 @@ const Gallery = () => {
             width={300}
           />
         </div>
-        <Link to='/FullGallery' className='text-gray-500 pt-10 pb-32 text-lg hover:text-light-pink'>
-          Click for more
-        </Link>
+        <button className='pb-24 pt-12'>
+          <Link to='/FullGallery' className='text-gray-400 text-lg btn'>
+            Click for more
+          </Link>
+        </button>
+
     </section>
   )
 }

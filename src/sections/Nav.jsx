@@ -25,11 +25,11 @@ const Nav = ({paused, togglePaused}) => {
                   
                 />
             </button>
-            <ul className='flex-1 flex justify-end items-center gap-16 text-gray-400 max-md:hidden '>
-              <Link to="/#home" smooth={true} duration={500} className="hover:text-white cursor-pointer">Home</Link>
-              <Link to="/#about" smooth={true} duration={500} className="hover:text-white cursor-pointer">About me</Link>
-              <Link to="/#projects" smooth={true} duration={500} className="hover:text-white cursor-pointer">Projects</Link>
-              <Link to="/#gallery" smooth={true} duration={500} className="hover:text-white cursor-pointer">Gallery</Link>
+            <ul className='flex-1 flex justify-end items-center gap-16 text-gray-400 max-md:hidden'>
+              <Link to="/#home" smooth={true} duration={500} className="hover:text-white cursor-pointer btn">Home</Link>
+              <Link to="/#about" smooth={true} duration={500} className="hover:text-white cursor-pointer btn">About me</Link>
+              <Link to="/#projects" smooth={true} duration={500} className="hover:text-white cursor-pointer btn">Projects</Link>
+              <Link to="/#gallery" smooth={true} duration={500} className="hover:text-white cursor-pointer btn">Gallery</Link>
           </ul>
             <button className='hidden max-md:block' onClick={toggleSidebar}>
               <img

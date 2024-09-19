@@ -88,6 +88,67 @@
       opacity: 0;
     }
   }
+
+  .hover-border {
+    position: relative;
+    overflow: hidden;
+  }
+  .hover-border::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #5b7edd;
+    transition: width 0.4s;
+  }
+  .hover-border:hover::before {
+    width: 100%;
+  }
+
+  .hover-3d {
+    perspective: 1000px;
+  }
+  .hover-3d:hover img {
+    transform: rotateY(10deg) rotateX(10deg);
+    transition: transform 0.5s ease;
+  }
+ 
+  .hover-tilt:hover {
+    transform: rotateX(5deg) rotateY(5deg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .btn {
+    position: relative;
+    color: #625d5d;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .btn::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background: #445394; /* Change to desired color */
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+  
+  .btn:hover {
+    color: #d4a2d4; /* Change text color on hover */
+  }
+  
+  .btn:hover::after {
+    transform: scaleX(1);
+  }
+  
+  
   
 
 }

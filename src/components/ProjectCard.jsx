@@ -1,33 +1,42 @@
 
-import Ripple from "./Ripple"
-import GithubIcon from "./icons/GithubIcon"
+import ProjectGithub from "./icons/ProjectGithub"
 
-const ProjectCard = ({img, title, description, skills=[]}) => {
+const ProjectCard = ({img, title, description, link, skills=[]}) => {
   return (
-    <div className="flex-1 sm:w-[350px] sm:min-w-[350px] w-full rounded-lg shadow-3xl px-10 py-16 border-boxShadow hover:border-blue-900 group group-hover:bg-gray-900/50 transition-colors duration-300">      
+    <div className="flex-1 sm:w-[350px] sm:min-w-[350px] w-full rounded-lg border border-blue-purple hover-tilt px-3 py-3">      
       <img
         src={img}
-
+        className="rounded-lg"
       />
-      <p className="font-fira font-bold text-base text-white mt-5">
-        {title}
-      </p>
-      <p className="text-gray-400 font-archivo mt-5">
-        {description}
-      </p>
-
-    <p className="flex flex-row gap-3 justify-start flex-wrap mt-3">
-      {skills.map((skill, index) => (
-        <div key={index}>
-          <span className="text-xs border rounded-md text-gray-500 px-1 py-1 border-gray-600">
-            #{skill}
-          </span>
+      <div className="px-5">
         </div>
-      ))}
-    </p>
-    <div className="mt-5">
-      <GithubIcon size={30} fill={"gray"}/>
-    </div>
+        <p className="font-fira font-bold text-xl text-gray-300 mt-5">
+          {title}
+        </p>
+        <p className="text-gray-400 font-archivo mt-2">
+          {description}
+        </p>
+
+        <p className="flex flex-row gap-3 justify-start flex-wrap mt-8">
+          {skills.map((skill, index) => (
+            <div key={index}>
+              <span className="text-xs border rounded-md text-gray-500 px-1 py-1 border-gray-600">
+                #{skill}
+              </span>
+            </div>
+          ))}
+        </p>
+        <div className="mt-7 pb-5">
+          <a 
+            href={link}
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <ProjectGithub size={30} fill={"gray"} />
+          </a>
+
+        </div>
+        
     </div>
   )
 }
