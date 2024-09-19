@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { HashLink as Link } from 'react-router-hash-link';
 import ScrollTop from './components/ScrollTop';
 import Nav from './sections/Nav';
 import HomePage from './sections/HomePage';
