@@ -22,7 +22,11 @@ const Projects = () => {
         Take a look at what I've been working on!
       </p>
       <div className="pt-16 gap-8 flex flex-wrap justify-center">
-        <a>
+        <a
+          href="https://github.com/phasuk15/Herb-and-Spice.git"
+          target="_blank" 
+          rel="noopener noreferrer" 
+        >
           <ProjectCard 
             title="Herb and Spice"
             description="A website for my family Thai restaurant. It's not done yet tho >.<. Will be coming soon!!" 
