@@ -6,6 +6,7 @@ const ProjectCard = ({img, title, description, link, skills=[]}) => {
     <div className="flex-1 sm:w-[350px] sm:min-w-[350px] w-full rounded-lg border border-blue-purple hover-tilt px-3 py-3">      
       <img
         src={img}
+        alt=""
         className="rounded-lg"
       />
       <div className="px-5">

@@ -16,6 +16,7 @@ const GalleryCard = ({ img, height, width }) => {
       <div className='cursor-pointer'>
         <img
           src={img}
+          alt=""
           height={height}
           width={width}
           className="transition-transform ease-in-out duration-300 hover:scale-105 rounded-md opacity-75 hover:opacity-100"
@@ -31,6 +32,7 @@ const GalleryCard = ({ img, height, width }) => {
           <div className="relative">
             <img
               src={img}
+              alt="artwork"
               className="max-h-[90vh] max-w-[90vw] rounded-md"
             />
             <button

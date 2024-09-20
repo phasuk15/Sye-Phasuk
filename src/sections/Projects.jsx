@@ -1,6 +1,5 @@
 
 import ProjectCard from "../components/ProjectCard"
-import image from "../assets/images/poppy field.jpg"
 import herbandspice from "../assets/images/herbandspice.jpg"
 import sportmate from "../assets/images/sportmate.png"
 
