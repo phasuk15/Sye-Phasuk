@@ -3,9 +3,24 @@ import "./globals.css";
 import NavBar from "./sections/NavBar";
 import Footer from "./sections/Footer";
 
+import { Pixelify_Sans } from "next/font/google";
+import { Jersey_10 } from "next/font/google";
+
+const pixelify = Pixelify_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"], 
+  variable: "--font-pixelify",
+});
+
+const jersey = Jersey_10({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-jersey",
+});
+
 export const metadata: Metadata = {
-  title: "Herb and Spice",
-  description: "Delicious food, cozy atmosphere",
+  title: "Sye Phasuk",
+  description: "Portfolio",
 };
 
 export default function RootLayout({
