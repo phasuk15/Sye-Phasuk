@@ -1,6 +1,6 @@
 const About = () => {
     return (  
-        <div>
+        <div className="font-pixelify py-12">
             About
         </div>
     );

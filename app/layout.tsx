@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={pixelify.className}>
       <body className="bg-white text-gray-900">
         <NavBar />
         <main className="min-h-screen">{children}</main>
