@@ -3,18 +3,18 @@ import "./globals.css";
 import NavBar from "./sections/NavBar";
 import Footer from "./sections/Footer";
 
-import { Pixelify_Sans } from "next/font/google";
-import { Jersey_10 } from "next/font/google";
+import { Pixelify_Sans, Jersey_10 } from "next/font/google";
 
 const pixelify = Pixelify_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"], 
+  display: 'swap',
   variable: "--font-pixelify",
 });
 
 const jersey = Jersey_10({
   subsets: ["latin"],
   weight: "400",
+  display: 'swap',
   variable: "--font-jersey",
 });
 
@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={pixelify.className}>
+    <html lang="en" className={`${pixelify.variable} ${jersey.variable} antialiased`}>
       <body className="bg-white text-gray-900">
         <NavBar />
         <main className="min-h-screen">{children}</main>

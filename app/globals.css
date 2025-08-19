@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@theme inline {
+  --font-pixelify: var(--font-pixelify);
+  --font-jersey: var(--font-jersey);
+}
+
 html {
   scroll-behavior: smooth;
 }
+

@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}", 
+    "./app/**/*.{js,jsx,ts,tsx}", 
   ],
   theme: {
     fontSize: {
@@ -23,7 +23,7 @@ module.exports = {
         jersey: ["var(--font-jersey)"]        
       },
       colors: {
-        
+        "light-pink": "#ffe0f6"
       },
       screens: {
         "wide": "1440px"
