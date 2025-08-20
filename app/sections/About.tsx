@@ -1,8 +1,15 @@
 const About = () => {
     return (  
-        <div className="h-screen">
-            <h1 className="font-jersey font-bold text-5xl flex justify-center py-12 ">About Me</h1>
-            <p className="">“Hi, I’m Sye! I’m a software engineer and designer who loves building creative, user-friendly digital experiences.”</p>
+        <div className="h-screen max-w-2xl mx-auto px-4 flex flex-col items-center">
+            <h1 className="font-jersey font-bold text-5xl py-12 ">About Me</h1>
+            <div className="flex flex-col justify-center leading-relaxed text-center font-pixelify gap-5">
+                <p>Hi, I’m Sye! I’m a software engineer and designer who loves building creative, user-friendly digital experiences.</p>
+                <p>I’m passionate about coding, design, and creating things that make people’s lives a little easier (and prettier).</p>
+                <p>Find more about me in my dashboard!</p>
+            </div>
+            <a href="/dashboard" className="flex justify-center text-center font-jersey text-2xl mt-10">
+                Dashboard
+            </a>
         </div>
     );
 }

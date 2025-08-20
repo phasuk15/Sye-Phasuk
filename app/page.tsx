@@ -27,6 +27,15 @@ const Home = () => {
       <section id="about">
         <About />
       </section>
+       <section id="about">
+        <About />
+      </section>
+       <section id="about">
+        <About />
+      </section>
+       <section id="about">
+        <About />
+      </section>
     </main>
   );
 }
