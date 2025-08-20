@@ -5,6 +5,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Projects from "./sections/Projects";
+import Gallery from "./sections/Gallery";
 
 const Home = () => {
   const pathname = usePathname();
@@ -32,7 +33,7 @@ const Home = () => {
         <Projects />
       </section>
        <section id="gallery">
-
+        <Gallery />
       </section>
        <section id="essay">
 
