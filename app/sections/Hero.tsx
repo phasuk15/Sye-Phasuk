@@ -27,9 +27,8 @@ const Hero = () => {
         <Image 
           src="/avatar.png" 
           alt="hero" 
-          width={500} height={500}
-          className="object-cover w-full h-full" 
-          priority
+          width={450} height={450}
+          className="object-cover" 
         />
       </div>
     </div>
