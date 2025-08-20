@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
+import Projects from "./sections/Projects";
 
 const Home = () => {
   const pathname = usePathname();
@@ -27,14 +28,14 @@ const Home = () => {
       <section id="about">
         <About />
       </section>
-       <section id="about">
-        <About />
+       <section id="projects">
+        <Projects />
       </section>
-       <section id="about">
-        <About />
+       <section id="gallery">
+
       </section>
-       <section id="about">
-        <About />
+       <section id="essay">
+
       </section>
     </main>
   );
