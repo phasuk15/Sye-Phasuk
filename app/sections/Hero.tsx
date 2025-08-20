@@ -16,8 +16,35 @@ const Hero = () => {
           Sye Phasuk
         </h1>
         <div>
-          <button className="mt-5 flex flex-wrap gap-10">
-            {/* buttons go here */}
+          <button className="mt-5 flex flex-wrap gap-5">
+            <a>
+              <Image 
+                  src="/linkedin.png" 
+                  alt="LinkedIn"
+                  width={32} height={32}
+                />
+            </a>
+            <a>
+              <Image 
+                  src="/github.png" 
+                  alt="LinkedIn"
+                  width={32} height={32}
+                />
+            </a>
+            <a>
+              <Image 
+                  src="/insta.png" 
+                  alt="LinkedIn"
+                  width={32} height={32}
+                />
+            </a>
+            <a>
+              <Image 
+                  src="/youtube.png" 
+                  alt="LinkedIn"
+                  width={32} height={32}
+                />
+            </a>
           </button>
         </div>
       </div>
