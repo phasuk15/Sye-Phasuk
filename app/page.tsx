@@ -7,7 +7,7 @@ import About from "./sections/About";
 import Projects from "./sections/Projects";
 import Gallery from "./sections/Gallery";
 import Essays from "./sections/Essays";
-import { East_Sea_Dokdo } from "next/font/google";
+import Contact from "./sections/Contact";
 
 const Home = () => {
   const pathname = usePathname();
@@ -37,8 +37,11 @@ const Home = () => {
        <section id="gallery">
         <Gallery />
       </section>
-       <section id="essays">
+      <section id="essays">
         <Essays />
+      </section>
+      <section id="contact">
+        <Contact />
       </section>
     </main>
   );
