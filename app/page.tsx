@@ -6,6 +6,8 @@ import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Projects from "./sections/Projects";
 import Gallery from "./sections/Gallery";
+import Essays from "./sections/Essays";
+import { East_Sea_Dokdo } from "next/font/google";
 
 const Home = () => {
   const pathname = usePathname();
@@ -35,8 +37,8 @@ const Home = () => {
        <section id="gallery">
         <Gallery />
       </section>
-       <section id="essay">
-
+       <section id="essays">
+        <Essays />
       </section>
     </main>
   );
