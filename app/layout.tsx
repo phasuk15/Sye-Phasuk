@@ -30,13 +30,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${pixelify.variable} ${jersey.variable} antialiased`}>
-      <body className="bg-white text-gray-900">
+      <body className="bg-white text-gray-900 flex flex-col min-h-screen">
         <NavBar />
-        <main className="min-h-screen">{children}</main>
+        <main className="flex-grow">{children}</main>
         <Footer />
       </body>
-
-      
     </html>
   );
 }

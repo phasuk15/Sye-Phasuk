@@ -1,9 +1,9 @@
 const Footer = () => {
-    return (  
-        <div className="text-sm space-y-1 text-gray-200 max-container flex flex-col justify-center items-center bg-black py-3">
-            <p>© 2025 Sye Phasuk. All Rights Reserved.</p>
-      </div>
-    );
+  return (  
+    <footer className="text-sm text-gray-600 flex flex-col justify-center items-center bg-gray-200 py-3 border-t border-gray-300">
+      <p>© {new Date().getFullYear()} Sye Phasuk. All Rights Reserved.</p>
+    </footer>
+  );
 }
- 
+
 export default Footer;
