@@ -1,32 +1,51 @@
-const ProjectCard = () => {
+interface ProjectCardProps {
+  title: string;
+  description: string;
+  skills: string[];
+  image: string;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, skills, image }) => {
   return (
-    <div className="w-[350px] rounded-2xl shadow-lg overflow-hidden border border-gray-200 bg-white">
-      {/* Browser-like header */}
-      <div className="flex items-center justify-between bg-pink-200 px-3 py-2">
+    <div className="w-72 bg-white border-4 border-pink-500 rounded-none shadow-[4px_4px_0px_rgba(0,0,0,0.7)] hover:shadow-[6px_6px_0px_rgba(0,0,0,0.7)] transition-all duration-200 font-pixelify">
+      {/* Fake "browser" top bar */}
+      <div className="bg-pink-500 text-white px-3 py-1 flex items-center justify-between text-xs">
+        <span className="font-bold">project.html</span>
         <div className="flex gap-1">
-          <span className="w-3 h-3 rounded-full bg-pink-400"></span>
-          <span className="w-3 h-3 rounded-full bg-pink-300"></span>
-          <span className="w-3 h-3 rounded-full bg-pink-500"></span>
+          <span className="w-3 h-3 bg-red-400 border border-black"></span>
+          <span className="w-3 h-3 bg-yellow-400 border border-black"></span>
+          <span className="w-3 h-3 bg-green-400 border border-black"></span>
         </div>
-        <p className="text-xs text-gray-600">2025-08-21-project.html</p>
       </div>
 
-      {/* Image preview */}
-      <img
-        src="/example.jpg"
-        alt="Project preview"
-        className="w-full h-40 object-cover"
-      />
+      {/* Image */}
+      <div className="h-36 overflow-hidden border-b-4 border-pink-500">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover image-pixelated"
+        />
+      </div>
 
       {/* Content */}
-      <div className="p-4">
-        <h2 className="text-lg font-bold text-pink-600">Possimus</h2>
-        <p className="text-sm text-gray-600 mt-1">
-          Officia sit numquam fugiat sit molestiae id. Est modi est at debitis
-          dolorem. Ut voluptate quod rem dolores sit molestiae maiores.
-        </p>
+      <div className="p-3">
+        <h2 className="text-lg text-pink-600 font-bold">{title}</h2>
+        <p className="text-xs text-gray-800 mt-2">{description}</p>
 
-        <button className="mt-4 px-4 py-2 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition">
+        {/* Skills */}
+        <div className="flex flex-wrap gap-1 mt-3">
+          {skills.map((skill, idx) => (
+            <span
+              key={idx}
+              className="px-2 py-0.5 text-[10px] bg-pink-200 text-pink-900 border border-pink-600"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+
+        {/* Button */}
+        <button className="mt-4 w-full bg-pink-500 text-white border-2 border-black px-2 py-1 text-sm hover:bg-pink-600 active:translate-y-[2px] transition-all">
           View Project
         </button>
       </div>
