@@ -20,9 +20,14 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       onClick={onClick}
-      className={`relative bg-pink-300 border-4 border-pink-500 shadow-[4px_4px_0px_#ec4899] 
-        hover:translate-x-1 hover:translate-y-1 transition-transform duration-100 
-        font-['Press_Start_2P'] text-pink-900 ${sizeClasses[size]} ${className}`}
+      className={`font-jersey text-2xl mt-10 uppercase tracking-widest text-white 
+        bg-gradient-to-b from-pink-200 via-pink-300 to-pink-200 
+        border-4 border-pink-400 
+        px-6 py-3 
+        shadow-[4px_4px_0px_#ec4899] 
+        hover:shadow-[2px_2px_0px_#ec4899] 
+        active:shadow-none active:translate-x-1 active:translate-y-1 
+        transition-all duration-100 cursor-pointer ${sizeClasses[size]} ${className}`}
     >
       {text}
 

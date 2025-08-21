@@ -1,4 +1,5 @@
 import GalleryCard from "../components/GalleryCard";
+import Button from "../components/Button";
 
 const Gallery = () => {
     return (  
@@ -12,10 +13,12 @@ const Gallery = () => {
             </div>  
             <a
                 href="/gallery"
-                className="flex justify-center text-center font-jersey text-2xl mt-10"
+                className="mt-12"
             >
-                See full gallery
-            </a>
+                <Button 
+                    text="See full gallery"
+                />
+            </a>    
         </div>
     );
 }

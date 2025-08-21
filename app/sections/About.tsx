@@ -1,3 +1,5 @@
+import Button from "../components/Button";
+
 const About = () => {
     return (  
         <div className="h-screen max-w-2xl mx-auto px-4 flex flex-col items-center">
@@ -8,7 +10,9 @@ const About = () => {
                 <p>Find more about me in my dashboard!</p>
             </div>
             <a href="/dashboard" className="flex justify-center text-center font-jersey text-2xl mt-10">
-                Dashboard
+                <Button
+                    text="Dashboard"
+                />
             </a>
         </div>
     );
