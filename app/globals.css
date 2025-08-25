@@ -3,6 +3,12 @@
 @theme inline {
   --font-pixelify: var(--font-pixelify);
   --font-jersey: var(--font-jersey);
+
+  --light-pink:  #EEC8CF;
+  --purple-100: #CE8A97;
+  --purple-200: #AE5969;
+  --purple-300: #634A45;
+  --purple-400: #412722;
 }
 
 html {

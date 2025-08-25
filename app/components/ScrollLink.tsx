@@ -8,6 +8,7 @@ interface ScrollLinkProps {
   href: string;
   children: React.ReactNode;
   className?: string;
+  onClick?: () => void; 
 }
 
 const ScrollLink = ({ href, children, className }: ScrollLinkProps) => {

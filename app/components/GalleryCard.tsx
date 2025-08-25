@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-interface PixelCardProps {
+interface GalleryCardProps {
   image: string;        // URL of the artwork
   caption?: string;     // Optional caption below the image
   width?: string;       // Tailwind width class
   height?: string;      // Tailwind height class
 }
 
-const PixelCard: React.FC<PixelCardProps> = ({
+const GalleryCard: React.FC<GalleryCardProps> = ({
   image,
   caption,
   width = "w-72",
@@ -77,4 +77,4 @@ const PixelCard: React.FC<PixelCardProps> = ({
   );
 };
 
-export default PixelCard;
+export default GalleryCard;
