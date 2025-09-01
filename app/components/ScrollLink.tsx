@@ -8,10 +8,11 @@ interface ScrollLinkProps {
   href: string;
   children: React.ReactNode;
   className?: string;
-  onClick?: () => void; 
+  onClick?: () => void;
+  as?: "a" | "span"; // <-- NEW
 }
 
-const ScrollLink = ({ href, children, className }: ScrollLinkProps) => {
+const ScrollLink = ({ href, children, className, as = "a" }: ScrollLinkProps) => {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -34,7 +35,7 @@ const ScrollLink = ({ href, children, className }: ScrollLinkProps) => {
     }
   };
 
-  const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
+  const handleClick = (e: MouseEvent<HTMLElement>) => {
     e.preventDefault();
 
     if (pathname === targetPath || (!targetPath && pathname === "/")) {
@@ -50,7 +51,6 @@ const ScrollLink = ({ href, children, className }: ScrollLinkProps) => {
   useEffect(() => {
     const scrollTo = sessionStorage.getItem("scrollTo");
     if (scrollTo) {
-      // Delay ensures DOM is rendered before measuring height
       setTimeout(() => {
         scrollWithOffset(scrollTo);
       }, 100);
@@ -58,10 +58,18 @@ const ScrollLink = ({ href, children, className }: ScrollLinkProps) => {
     }
   }, [pathname]);
 
+  const Component = as;
+
   return (
-    <a href={href} onClick={handleClick} className={className}>
+    <Component
+      href={as === "a" ? href : undefined} // only add href for <a>
+      role={as === "span" ? "link" : undefined}
+      tabIndex={as === "span" ? 0 : undefined}
+      onClick={handleClick}
+      className={className}
+    >
       {children}
-    </a>
+    </Component>
   );
 };
 
