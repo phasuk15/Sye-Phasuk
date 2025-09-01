@@ -1,4 +1,5 @@
 import EssayCard from "../components/EssayCard";
+import Button from "../components/Button";
 
 const Essays = () => {
     return (  
@@ -22,6 +23,9 @@ const Essays = () => {
                 title="Proof of Work | Blockchain in Go: Part 2"
                 description="Explore Proof-of-Work, a fundamental blockchain concept, and implement it in a Go prototype."
             />
+            <a href="/essays">
+                <Button text="See more essays"/>
+            </a>
         </div>
     );
 }
