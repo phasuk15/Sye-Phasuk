@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 import ScrollLink from "../components/ScrollLink";
 
 export default function Navbar() {
@@ -32,37 +33,40 @@ export default function Navbar() {
         <span className="w-6 h-1 bg-black"></span>
       </button>
 
-       {/* Sidebar */}
+      {/* Sidebar Wrapper (right side) */}
       <div
         className={`fixed top-0 right-0 h-full w-64 bg-light-pink shadow-lg transform transition-transform duration-300 ease-in-out md:hidden z-50 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        {/* Close button */}
-        <button
-          className="absolute top-4 left-4 text-black text-xl font-bold"
-          onClick={() => setIsOpen(false)}
-        >
-          ✕
-        </button>
+        <Sidebar backgroundColor="#EEC8CF" className="h-full">
+          {/* Close button */}
+          <button
+            className="absolute top-4 left-4 text-black text-xl font-bold"
+            onClick={() => setIsOpen(false)}
+          >
+            ✕
+          </button>
 
-        {/* Sidebar Links */}
-        <div className="mt-16 flex flex-col space-y-4 px-6 font-pixelify text-black">
-          <ScrollLink href="#about" onClick={() => setIsOpen(false)}>About</ScrollLink>
-          <ScrollLink href="#projects" onClick={() => setIsOpen(false)}>Projects</ScrollLink>
-          <ScrollLink href="#gallery" onClick={() => setIsOpen(false)}>Gallery</ScrollLink>
-          <ScrollLink href="#essays" onClick={() => setIsOpen(false)}>Essays</ScrollLink>
-          <ScrollLink href="#contact" onClick={() => setIsOpen(false)}>Contact</ScrollLink>
-        </div>
+          <Menu className="mt-16 font-pixelify text-black">
+            <MenuItem>
+              <ScrollLink href="#about" onClick={() => setIsOpen(false)}>About</ScrollLink>
+            </MenuItem>
+            <MenuItem>
+              <ScrollLink href="#projects" onClick={() => setIsOpen(false)}>Projects</ScrollLink>
+            </MenuItem>
+            <MenuItem>
+              <ScrollLink href="#gallery" onClick={() => setIsOpen(false)}>Gallery</ScrollLink>
+            </MenuItem>
+            <MenuItem>
+              <ScrollLink href="#essays" onClick={() => setIsOpen(false)}>Essays</ScrollLink>
+            </MenuItem>
+            <MenuItem>
+              <ScrollLink href="#contact" onClick={() => setIsOpen(false)}>Contact</ScrollLink>
+            </MenuItem>
+          </Menu>
+        </Sidebar>
       </div>
-
-      {/* Dim background when menu is open */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 md:hidden"
-          onClick={() => setIsOpen(false)}
-        ></div>
-      )}
     </nav>
   );
 }
