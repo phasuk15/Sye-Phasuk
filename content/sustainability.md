@@ -1,5 +1,10 @@
+---
+title: "AI and Sustainability"
+date: "2025-04-03"
+description: "Discussing how AI can help and hurt sustainability efforts."
+---
 
-# AI and Sustainability
+# AI and Sustainabilityß
 
 With sustainability becoming a pressing global issue, it is evermore vital for governments, corporations and organisations to come together to address this challenge. The rapid advancements in AI development could offer incredible tools and solutions to the fight for sustainability. AI excels at inference, the process of analysing vast amounts of data, identifying patterns and predicting outcomes, making it invaluable for solving problems when applied to sustainability issues and Earth sciences. Despite the immense promise that AI holds, its potential cannot be fully realised unless we address the underlying environmental impact of training and deploying these models.
 
