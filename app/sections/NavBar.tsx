@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 import ScrollLink from "../components/ScrollLink";
+import NavButton from "../components/NavButton";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,16 +15,14 @@ export default function Navbar() {
         Sye Phasuk
       </a>
 
-      {/* Desktop Links */}
-      <div className="hidden md:flex space-x-5 font-pixelify text-black">
-        <ScrollLink href="#about">About</ScrollLink>
-        <ScrollLink href="#projects">Projects</ScrollLink>
-        <ScrollLink href="#gallery">Gallery</ScrollLink>
-        <ScrollLink href="#essays">Essays</ScrollLink>
-        <ScrollLink href="#contact">Contact</ScrollLink>
-      </div>
+    <div className="hidden md:flex space-x-5">
+      <NavButton href="#about">About</NavButton>
+      <NavButton href="#projects">Projects</NavButton>
+      <NavButton href="#gallery">Gallery</NavButton>
+      <NavButton href="#essays">Essays</NavButton>
+      <NavButton href="#contact">Contact</NavButton>
+    </div>
 
-      {/* Hamburger Button (mobile only) */}
       <button
         className="md:hidden flex flex-col space-y-1 focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
@@ -33,7 +32,6 @@ export default function Navbar() {
         <span className="w-6 h-1 bg-black"></span>
       </button>
 
-      {/* Sidebar Wrapper (right side) */}
       <div
         className={`fixed top-0 right-0 h-full w-64 bg-light-pink shadow-lg transform transition-transform duration-300 ease-in-out md:hidden z-50 ${
           isOpen ? "translate-x-0" : "translate-x-full"
