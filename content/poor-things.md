@@ -1,6 +1,6 @@
 ---
 title: "The carefully crafted set of Poor Things"
-date: "2025-04-03"
+date: "03/01/2025"
 description: "Exploring the themes and journey of our protagonist in 'Poor Things' and how it is reflected in the set of the film."
 ---
 
