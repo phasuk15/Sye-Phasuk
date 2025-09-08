@@ -1,28 +1,40 @@
-import Image from "next/image";
+'use client';
+
+import GalleryCard from "../components/GalleryCard";
 
 const GalleryFull = () => {
-    return (  
-        <div className="max-w-2xl mx-auto px-4 flex flex-col items-center pb-24">
-            <h1 className="font-jersey font-bold text-5xl pt-24 pb-6">Gallery</h1>
-            <p className="font-pixelify text-center mb-12">
-                Welcome to my art gallery! Creating artwork has been a passionate hobby of mine for as long as I can remember. I've always enjoyed exploring different styles and various mediums, now including pixel art! (I drew all the assets on this webpage hehe) 🌷✨
-            </p>
+  const artworks = [
+    { src: "/artwork10.jpg", caption: "Artwork 10" },
+    { src: "/artwork1.jpg", caption: "Artwork 1" },
+    { src: "/artwork2.jpg", caption: "Artwork 2" },
+    { src: "/artwork3.jpg", caption: "Artwork 3" },
+    { src: "/artwork4.jpg", caption: "Artwork 4" },
+    { src: "/artwork5.jpg", caption: "Artwork 5" },
+    { src: "/artwork6.jpg", caption: "Artwork 6" },
+    { src: "/artwork7.jpg", caption: "Artwork 7" },
+    { src: "/artwork8.jpg", caption: "Artwork 8" },
+    { src: "/artwork9.jpg", caption: "Artwork 9" },
+  ];
 
-            {/* Artwork */}
-            <div className="flex flex-col gap-8 items-center">
-                <Image src="/artwork10.jpg" alt="Artwork 10" width={500} height={100}/>
-                <Image src="/artwork1.jpg" alt="Artwork 1" width={500} height={100}/>
-                <Image src="/artwork2.jpg" alt="Artwork 2" width={500} height={100}/>
-                <Image src="/artwork3.jpg" alt="Artwork 3" width={500} height={100}/>
-                <Image src="/artwork4.jpg" alt="Artwork 4" width={500} height={100}/>
-                <Image src="/artwork5.jpg" alt="Artwork 5" width={500} height={100}/>
-                <Image src="/artwork6.jpg" alt="Artwork 6" width={500} height={100}/>
-                <Image src="/artwork7.jpg" alt="Artwork 7" width={500} height={100}/>
-                <Image src="/artwork8.jpg" alt="Artwork 8" width={500} height={100}/>
-                <Image src="/artwork9.jpg" alt="Artwork 9" width={500} height={100}/>
-            </div>
+  return (
+    <div className="min-h-screen max-w-6xl mx-auto px-4 flex flex-col items-center pb-24">
+        <div className="max-w-2xl pb-12 text-center">
+            <h1 className="font-jersey font-bold text-5xl pt-24 pb-6">Gallery</h1>
+            <p className="font-pixelify text-mauve-brown">
+                Welcome to my art gallery! Creating artwork has been a passionate hobby of mine for as long as I can remember. 
+                I’ve always enjoyed exploring different styles and various mediums — now including pixel art! 
+                (I drew all the images on this webpage hehe) 🌷✨
+            </p>
         </div>
-    );
-}
- 
+
+      {/* Artwork Grid */}
+      <div className="columns-2 md:columns-3 gap-4">
+        {artworks.map((art) => (
+          <GalleryCard key={art.src} image={art.src} caption={art.caption} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 export default GalleryFull;

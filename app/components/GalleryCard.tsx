@@ -1,75 +1,70 @@
 import { useState } from "react";
 
 interface GalleryCardProps {
-  image: string;        // URL of the artwork
-  caption?: string;     // Optional caption below the image
-  width?: string;       // Tailwind width class
-  height?: string;      // Tailwind height class
+  image: string;       // URL of the artwork
+  caption?: string;    // Optional caption/title
 }
 
-const GalleryCard: React.FC<GalleryCardProps> = ({
-  image,
-  caption,
-  width = "w-72",
-  height = "h-64",
-}) => {
+const GalleryCard: React.FC<GalleryCardProps> = ({ image, caption }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
       {/* Card */}
       <div
-        className={`relative inline-block p-6 bg-pink-100 border-4 border-pink-400 shadow-[6px_6px_0px_#ec4899] ${width} cursor-pointer`}
         onClick={() => setIsOpen(true)}
+        className="
+          p-3
+          border-3 border-raspberry 
+          bg-white 
+          shadow-[6px_6px_0px_#412722] 
+          hover:shadow-[8px_8px_0px_#AE5969]
+          transition-all 
+          duration-200 
+          cursor-pointer font-pixelify
+        "
       >
-        {/* Sparkles */}
-        <div className="absolute top-2 left-2 w-3 h-3 bg-pink-300"></div>
-        <div className="absolute top-6 left-12 w-2 h-2 bg-pink-400 rounded-full"></div>
-        <div className="absolute top-10 right-4 w-3 h-3 bg-pink-300"></div>
-        <div className="absolute bottom-4 left-6 w-2 h-2 bg-pink-400 rounded-full"></div>
-        <div className="absolute bottom-2 right-2 w-3 h-3 bg-pink-300"></div>
-        <div className="absolute bottom-8 right-12 w-2 h-2 bg-pink-400 rounded-full"></div>
+        {/* Pixel "window bar" */}
+        <div className="bg-raspberry text-light-pink px-2 py-1 flex items-center justify-between text-xs mb-3 ">
+          <span className="font-bold">gallery.png</span>
+          <div className="flex gap-1">
+            <span className="w-3 h-3 bg-rosewood border border-plum-brown"></span>
+            <span className="w-3 h-3 bg-light-pink border border-plum-brown"></span>
+            <span className="w-3 h-3 bg-mauve-brown border border-plum-brown"></span>
+          </div>
+        </div>
 
-        {/* Pixel hearts */}
-        <div className="absolute top-2 right-16 w-3 h-3 bg-pink-400 rotate-45 before:content-[''] before:block before:w-3 before:h-3 before:bg-pink-400 before:rounded-full before:-translate-x-1.5 before:-translate-y-1.5"></div>
-        <div className="absolute bottom-4 left-16 w-3 h-3 bg-pink-400 rotate-45 before:content-[''] before:block before:w-3 before:h-3 before:bg-pink-400 before:rounded-full before:-translate-x-1.5 before:-translate-y-1.5"></div>
-
-        {/* Artwork */}
+        {/* Image */}
         <img
           src={image}
           alt={caption || "Artwork"}
-          className={`block w-full ${height} object-cover border-2 border-pink-300`}
+          className="w-full h-auto object-contain border-2 border-raspberry"
         />
-
-        {/* Caption */}
-        {caption && (
-          <div className="mt-3 text-center text-sm font-pixelify text-pink-600">
-            {caption}
-          </div>
-        )}
       </div>
 
-      {/* Pixelated Modal */}
+      {/* Pixel Modal */}
       {isOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
-          <div className="relative bg-pink-100 border-8 border-pink-400 shadow-[8px_8px_0px_#ec4899] p-4 max-w-[90%] max-h-[90%]">
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 font-pixelify">
+          <div className="relative p-2 bg-white border-8 border-raspberry shadow-[8px_8px_0px_#412722] max-w-[90%] max-h-[90%]">
+            
+            {/* Pixel window bar */}
+            <div className="bg-raspberry text-light-pink px-2 py-1 flex items-center justify-between text-xs mb-3">
+              <span className="font-bold">fullsize.png</span>
+              <button
+                className="w-4 h-4 bg-rosewood border border-plum-brown text-[10px] flex items-center justify-center"
+                onClick={() => setIsOpen(false)}
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* Full image */}
             <img
               src={image}
               alt={caption || "Full Artwork"}
-              className="max-w-full max-h-full object-contain border-4 border-pink-300"
+              className="max-w-full max-h-[80vh] object-contain border-4 border-rosewood"
             />
-            {caption && (
-              <div className="mt-2 text-center text-sm font-['Press_Start_2P'] text-pink-600">
-                {caption}
-              </div>
-            )}
-            {/* Pixel-style Close Button */}
-            <button
-              className="absolute top-2 right-2 text-pink-500 font-bold text-xl w-8 h-8 border-2 border-pink-400 bg-pink-200 grid place-items-center"
-              onClick={() => setIsOpen(false)}
-            >
-              ×
-            </button>
+
           </div>
         </div>
       )}

@@ -15,7 +15,7 @@ export default function Navbar() {
         Sye Phasuk
       </a>
 
-    <div className="hidden md:flex space-x-5">
+    <div className="hidden md:flex space-x-4">
       <NavButton href="#about">About</NavButton>
       <NavButton href="#projects">Projects</NavButton>
       <NavButton href="#gallery">Gallery</NavButton>
