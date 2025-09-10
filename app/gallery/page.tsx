@@ -28,9 +28,11 @@ const GalleryFull = () => {
         </div>
 
       {/* Artwork Grid */}
-      <div className="columns-2 md:columns-3 gap-4">
+      <div className="columns-1 md:columns-3 gap-4 gap-">
         {artworks.map((art) => (
-          <GalleryCard key={art.src} image={art.src} caption={art.caption} />
+          <div key={art.src} className="mb-6 break-inside-avoid">
+            <GalleryCard image={art.src} caption={art.caption} />
+          </div>
         ))}
       </div>
     </div>
