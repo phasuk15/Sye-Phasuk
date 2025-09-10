@@ -13,10 +13,10 @@ const EssaysFull = () => {
         const { data } = matter(fileContents);
 
         return {
-        slug: file.replace(".md", ""),
-        title: data.title,
-        date: data.date,
-        description: data.description,
+            slug: file.replace(".md", ""),
+            title: data.title,
+            date: data.date,
+            description: data.description,
         };
     });
 
@@ -42,7 +42,7 @@ const EssaysFull = () => {
                             duration-200 
                             cursor-pointer
                             ">
-                                
+
                             <div className="bg-raspberry text-light-pink px-2 py-1 flex items-center justify-between text-xs mb-3">
                             <span className="font-bold">essay.txt</span>
                             <div className="flex gap-1">
