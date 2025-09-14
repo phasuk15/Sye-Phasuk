@@ -1,8 +1,16 @@
+// lib/getPosts.ts
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-export function getPosts() {
+export interface PostMeta {
+  slug: string;
+  title: string;
+  date: string;
+  description: string;
+}
+
+export function getPosts(): PostMeta[] {
   const postsDir = path.join(process.cwd(), "content");
   const files = fs.readdirSync(postsDir);
 
@@ -12,8 +20,10 @@ export function getPosts() {
     const { data } = matter(fileContents);
 
     return {
-      slug: file.replace(".md", ""),
-      ...data,
+      slug: file.replace(/\.md$/, ""),
+      title: data.title,
+      date: data.date,
+      description: data.description,
     };
   });
 }
