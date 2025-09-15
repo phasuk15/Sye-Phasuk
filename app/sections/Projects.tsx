@@ -12,17 +12,19 @@ const Projects = () => {
         {/*Project Cards*/}
         <div className="mt-12 flex flex-wrap gap-10 justify-center">
             <ProjectCard
-            title="My Portfolio Website"
+            title="IoT Airport System"
             description="A playful and responsive portfolio built with Next.js and Tailwind CSS."
             skills={["Next.js", "React", "Tailwind CSS"]}
             image="/herbandspice.jpg"
             />
-            <ProjectCard
-            title="IoT Alert System"
-            description="Emergency alert system built with Arduino, MQTT, and real-time server integration."
-            skills={["Arduino", "MQTT", "Python"]}
-            image="lovelace_liverpool.jpg"
-            />
+            <a href="https://grp4-smart-system.vercel.app" target="_blank" rel="noopener noreferrer">
+              <ProjectCard
+              title="IoT Smart System"
+              description="A full-stack IoT smart system using Raspberry Pi devices to monitor the environemnt, users, devices and others in the lab."
+              skills={["Next.js", "MongoDB", "Tailwind", "Raspberry Pico"]}
+              image="lovelace_liverpool.jpg"
+              />
+            </a>
         </div>
         <a href="/projects"
           className="mt-10">

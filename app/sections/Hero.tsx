@@ -54,7 +54,7 @@ const Hero = () => {
           src="/avatar.png" 
           alt="hero" 
           width={450} height={450}
-          className="object-cover md:h-2xl md:w-3xl" 
+          className="object-cover md:h-xl md:w-xl" 
         />
       </div>
     </div>
