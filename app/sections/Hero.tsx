@@ -3,7 +3,6 @@ import Github from "../components/icons/Github";
 import Youtube from "../components/icons/Youtube";
 import Insta from "../components/icons/Insta";
 import Linkedin from "../components/icons/Linkedin";
-import Link from "next/link";
 
 const Hero = () => {
   return (  
