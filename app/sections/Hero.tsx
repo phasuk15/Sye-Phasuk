@@ -1,4 +1,9 @@
 import Image from "next/image";
+import Github from "../components/icons/Github";
+import Youtube from "../components/icons/Youtube";
+import Insta from "../components/icons/Insta";
+import Linkedin from "../components/icons/Linkedin";
+import Link from "next/link";
 
 const Hero = () => {
   return (  
@@ -16,34 +21,10 @@ const Hero = () => {
         </h1>
         <div>
           <button className="mt-5 flex flex-wrap gap-5">
-            <a>
-              <Image 
-                  src="/linkedin.png" 
-                  alt="LinkedIn"
-                  width={32} height={32}
-                />
-            </a>
-            <a>
-              <Image 
-                  src="/github.png" 
-                  alt="LinkedIn"
-                  width={32} height={32}
-                />
-            </a>
-            <a>
-              <Image 
-                  src="/insta.png" 
-                  alt="LinkedIn"
-                  width={32} height={32}
-                />
-            </a>
-            <a>
-              <Image 
-                  src="/youtube.png" 
-                  alt="LinkedIn"
-                  width={32} height={32}
-                />
-            </a>
+              <Linkedin/>
+              <Github/>
+              <Youtube/>
+              <Insta/>
           </button>
         </div>
       </div>
