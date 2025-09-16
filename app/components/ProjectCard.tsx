@@ -1,11 +1,14 @@
+import ProjectGithub from "./icons/ProjGit";
+
 interface ProjectCardProps {
   title: string;
   description: string;
   skills: string[];
   image: string;
+  git?: string;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, skills, image }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, skills, image, git }) => {
   return (
     <div className="w-72 bg-[#EEC8CF] border-4 border-[#CE8A97] rounded-none shadow-[4px_4px_0px_#412722] hover:shadow-[6px_6px_0px_#412722] transition-all duration-200 font-pixelify">
       {/* Fake "browser" top bar */}
@@ -43,11 +46,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, skills, i
             </span>
           ))}
         </div>
-
         {/* Button */}
-        <button className="mt-4 w-full bg-[#AE5969] text-[#EEC8CF] border-2 border-[#412722] px-2 py-1 text-sm hover:bg-[#634A45] active:translate-y-[2px] transition-all">
-          View Project
-        </button>
+        <div className="flex flex-row gap-3">
+          {
+            git && (
+              <ProjectGithub url={git}/>
+            )
+          }
+          <button className="mt-4 w-full bg-raspberry text-light-pink border-2 border-plum-brown px-2 py-1 text-sm hover:bg-mauve-brown:translate-y-[2px] transition-all">
+            View Project
+          </button>
+        </div>
       </div>
     </div>
   );
