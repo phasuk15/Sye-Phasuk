@@ -12,7 +12,7 @@ const Contact = () => {
             <button className="mt-12 flex flex-wrap gap-5">
                 <Linkedin/>
                 <Github/>
-                <Youtube url="https://www.youtube.com/@dianas15"/>
+                <Youtube url="https://www.youtube.com/@dianas15/videos"/>
                 <Insta/>
             </button>
         </div>

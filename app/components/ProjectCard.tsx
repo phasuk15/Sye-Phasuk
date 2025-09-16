@@ -12,7 +12,7 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, skills, image, git, yt }) => {
   return (
-    <div className="w-72 h-[28rem] bg-light-pink border-4 border-rosewood rounded-none shadow-[4px_4px_0px_#412722] hover:shadow-[6px_6px_0px_#412722] transition-all duration-200 font-pixelify">
+    <div className="w-72 h-[27rem] bg-light-pink border-4 border-rosewood rounded-none shadow-[4px_4px_0px_#412722] hover:shadow-[6px_6px_0px_#412722] transition-all duration-200 font-pixelify">
       {/* Fake "browser" top bar */}
       <div className="bg-rosewood text-light-pink px-3 py-1 flex items-center justify-between text-xs">
         <span className="font-bold">project.html</span>
