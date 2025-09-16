@@ -1,20 +1,34 @@
 import Image from "next/image";
+import React from "react";
 
-const Youtube = () => {
-    return ( 
-        <a
-            href='https://www.youtube.com/@dianas15'
-            target="_blank" 
-            rel="noopener noreferrer" 
-        >
-            <Image 
-                src="/youtube.png"
-                alt="youtube"
-                width={32}
-                height={32}
-            />
-        </a>
-    );
+interface YoutubeProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  size?: number;
+  alt?: string;
+  url?: string; 
 }
- 
+
+const Youtube: React.FC<YoutubeProps> = ({
+  size = 32,
+  alt = "Youtube icon",
+  url,
+  ...props
+}) => {
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      {...props}
+    >
+      <Image
+        src="/youtube.png"
+        alt={alt}
+        width={size}
+        height={size}
+        className="hover:opacity-80 transition"
+      />
+    </a>
+  );
+};
+
 export default Youtube;

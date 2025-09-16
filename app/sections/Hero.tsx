@@ -22,7 +22,7 @@ const Hero = () => {
           <button className="mt-5 flex flex-wrap gap-5">
               <Linkedin/>
               <Github/>
-              <Youtube/>
+              <Youtube url="https://www.youtube.com/@dianas15"/>
               <Insta/>
           </button>
         </div>
