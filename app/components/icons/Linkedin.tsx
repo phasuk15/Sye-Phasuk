@@ -12,6 +12,8 @@ const Linkedin = () => {
                 alt="Linkedin"
                 width={32}
                 height={32}
+                className="hover:opacity-30 transition"
+
             />
         </a>
     );

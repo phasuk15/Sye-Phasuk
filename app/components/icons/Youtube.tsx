@@ -25,7 +25,7 @@ const Youtube: React.FC<YoutubeProps> = ({
         alt={alt}
         width={size}
         height={size}
-        className="hover:opacity-80 transition"
+        className="hover:opacity-30 transition"
       />
     </a>
   );

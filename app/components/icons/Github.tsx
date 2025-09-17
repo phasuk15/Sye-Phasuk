@@ -12,6 +12,7 @@ const Github = () => {
                 alt="github"
                 width={32}
                 height={32}
+            className="hover:opacity-30 transition"
             />
         </a>
     );

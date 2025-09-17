@@ -25,7 +25,7 @@ const ProjectGithub: React.FC<ProjectGithubProps> = ({
         alt={alt}
         width={size}
         height={size}
-        className="hover:opacity-80 transition"
+        className="hover:opacity-30 transition"
       />
     </a>
   );
