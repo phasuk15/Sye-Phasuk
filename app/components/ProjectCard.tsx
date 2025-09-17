@@ -23,7 +23,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, skills, i
       </div>
 
       {/* Image */}
-      <div className="h-36 overflow-hidden border-b-4 border-rosewood">
+      <div className="h-44 overflow-hidden border-b-4 border-rosewood">
         <img
           src={image}
           alt={title}

@@ -2,8 +2,8 @@ import ProjectCard from "../components/ProjectCard";
 
 const ProjectsFull = () => {
     return (  
-        <div className="min-h-screen max-w-6xl mx-auto px-4 flex flex-col items-center pb-2">
-            <h1 className="font-jersey font-bold text-5xl pt-24 pb-6">Projects</h1>
+        <div className="min-h-screen max-w-6xl mx-auto px-4 flex flex-col items-center py-24">
+            <h1 className="font-jersey font-bold text-5xl pb-6">Projects</h1>
             <p className="max-w-2xl leading-relaxed text-center font-pixelify">
                 Just a few of my favorite builds! Some are experiments, some are full projects, but all of them show how I love exploring ideas and creating things that work (and hopefully look a little cute too!). 🌸✨💫
             </p>
@@ -42,8 +42,8 @@ const ProjectsFull = () => {
             <a href="/lovelace_poster_final.png" target="_blank" rel="noopener noreferrer">
                 <ProjectCard
                 title="Lovelace Colloquium"
-                description="Presented a poster at this national competition for women and non-binary students in
-                Computing in Liverpool 2024 exploring the use of AI and technology in the art community in China (I drew everything myself :0)."
+                description="Presented a poster at a competition for women and non-binary students in
+                Computing in Liverpool 2024 exploring the use of AI and technology in the Chinese art community (I drew everything myself :0)."
                 skills={["Procreate"]}
                 image="/lovelace_liverpool.jpg"
                 yt="https://www.youtube.com/watch?v=3-qxv5WFke4"
