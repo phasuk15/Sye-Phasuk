@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --color-light-pink: #EEC8CF;
-  --color-rosewood: #CE8A97;
-  --color-raspberry: #AE5969;
+  --color-light-pink: #f4e2ea;
+  --color-rosewood: #af7491;
+  --color-raspberry: #773957;
   --color-mauve-brown: #634A45;
-  --color-plum-brown: #412722;
+  --color-plum-brown: #0f0c3c;
 
   --font-pixelify: var(--font-pixelify);
   --font-jersey: var(--font-jersey);

@@ -11,7 +11,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full bg-light-pink text-white p-4 flex justify-between items-center shadow-lg z-50">
       {/* Logo */}
-      <a href="/" className="text-2xl font-bold font-pixelify text-black">
+      <a href="/" className="text-2xl font-bold font-pixelify text-black px-5">
         Sye Phasuk
       </a>
 
