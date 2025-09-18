@@ -1,8 +1,8 @@
 import Image from "next/image";
 
 const anime = [
-  { title: "Mob Psycho", cover: "/anime1.jpg" },
-  { title: "Spirited Away", cover: "/anime2.jpg" },
+  { title: "Mob Psycho", cover: "/anime1.jpg", caption:"" },
+  { title: "Spirited Away", cover: "/anime2.jpg", caption:"" },
 ];
 
 
