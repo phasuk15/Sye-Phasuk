@@ -1,13 +1,25 @@
 import Image from "next/image";
+import { useState } from "react";
+import Book from "../components/Book";
+
+interface Book {
+  id: number;
+  title: string;
+  author: string,
+  cover: string;
+  comments: string;
+}
 
 const books = [
-  { title: "The Seven Husbands of Evelyn Hugo", cover: "/book1.jpg" },
-  { title: "The Secret Garden", cover: "/book2.jpg" },
+  { id: 1, title: "The Seven Husbands of Evelyn Hugo", author: "Taylor Reid Jenkins", cover: "/book1.jpg", comments: "" },
+  { id: 2, title: "The Secret Garden", author: "Frances Hodgson Burnett", cover: "/book2.jpg", comments: "" },
 ];
 
-
 const BookBoard = () => {
+    const [selectedBook, setSelectedBook] = useState<Book | null>(null);
+    
     return (  
+        
         <div className="bg-light-pink border-4 border-raspberry shadow-[4px_4px_0px_#412722] transition-all hover:shadow-[6px_6px_0px_#AE5969] font-pixelify">
             <div className="flex gap-1 justify-end p-1 bg-rosewood">
                 <span className="w-2 h-2 bg-light-pink border border-plum-brown"></span>
@@ -16,6 +28,32 @@ const BookBoard = () => {
             </div>
             <div className="p-3">
                 <h1 className="text-lg font-bold mb-2">Books I've Read</h1>
+            </div>
+
+            {/* Shelf */}
+            <div className="flex gap-2 overflow-x-auto border-b-4 p-4">
+                <div className="flex w-full overflow-x-auto px-4 items-end border-b-8 border-rosewood pt-3">
+                    {books.map((book) => (
+                        <Book
+                        key={book.id}
+                        id={book.id}
+                        onClick={() => setSelectedBook(book)}
+                        />
+                    ))}
+                </div>
+            </div>
+
+            {/* Info panel (empty shelf space) */}
+            <div className="mt-4 min-h-[150px] flex items-center justify-center text-center border-t-4 border-rosewood pt-4">
+                {selectedBook ? (
+                <div>
+                    <h3 className="text-lg font-bold">{selectedBook.title}</h3>
+                    <p className="italic text-rosewood">by {selectedBook.author}</p>
+                    <p className="mt-2 text-gray-700">{selectedBook.comments}</p>
+                </div>
+                ) : (
+                <p className="text-gray-500 italic">Click a book to see details...</p>
+                )}
             </div>
 
         </div>

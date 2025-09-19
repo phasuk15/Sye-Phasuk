@@ -9,33 +9,13 @@ import AnimeCard from "./AnimeCard";
 import Image from "next/image";
 
 
-
-const MediaCard: React.FC<{ image: string; label: string }> = ({
-  image,
-  label,
-}) => {
-  return (
-    <div className="w-24 h-32 border-2 border-rosewood shadow-[2px_2px_0px_#412722] hover:shadow-[4px_4px_0px_#AE5969] cursor-pointer overflow-hidden">
-      <img
-        src={image}
-        alt={label}
-        className="w-full h-full object-cover object-top"
-      />
-      <p className="text-xs font-pixelify text-rosewood text-center mt-1">
-        {label}
-      </p>
-    </div>
-  );
-};
-
 const Dashboard = () => {
   return (
-    <div className="min-h-screen max-w-4xl mx-auto px-4 flex flex-col items-center ">
-        
+    <div className="min-h-screen max-w-4xl mx-auto px-4 flex flex-col items-center pb-16">
         <h1 className="font-jersey font-bold text-5xl pt-24 pb-6">Dashbaord</h1>
 
         {/* Introduction */}
-        <div className="font-pixelify bg-light-pink border-4 border-rosewood shadow-[4px_4px_0px_#412722]">
+        <div className="font-pixelify bg-light-pink border-4 border-rosewood shadow-[4px_4px_0px_#412722] pb-6">
             <div className="flex gap-1 justify-end p-1 bg-rosewood">
                 <span className="w-2 h-2 bg-light-pink border border-plum-brown"></span>
                 <span className="w-2 h-2 bg-raspberry border border-plum-brown"></span>
@@ -106,16 +86,17 @@ const Dashboard = () => {
         </div>
 
         <div className=" grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-12">
-
-            <BookBoard/>
+            <div className="md:col-span-2">
+                <BookBoard/>
+            </div>
 
             <AnimeCard/>
 
             <GameCard/>
 
-            <MusicPlayer title="Nod Krai Theme" artist="Aurora" albumArt="/aurora.avif"/>
+            <MusicPlayer/>
 
-            </div>
+        </div>
     </div>
   );
 };

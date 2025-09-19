@@ -7,13 +7,7 @@ import Forward from "../components/icons/Forward";
 import Backward from "../components/icons/Backward";
 import Play from "../components/icons/Play";
 
-interface MusicPlayerProps {
-  title: string;
-  artist: string;
-  albumArt: string;
-}
-
-const MusicPlayer: React.FC<MusicPlayerProps> = ({ title, artist, albumArt }) => {
+const MusicPlayer = () => {
     const songs = [
         { title: "Nod Krai Theme", artist: "Aurora", url: "https://youtu.be/RuXa_yxZMGI?si=KL1ezMZpqlJYN9ew", cover: "/aurora.avif"},
         { title: "My Way", artist: "KATSEYE", url: "https://youtu.be/1P8BbTY8gWo?si=_GPfk2cFmIXiAT7C", cover: "/katseye.jpg"},
