@@ -11,8 +11,8 @@ interface Book {
 }
 
 const books = [
-  { id: 1, title: "The Seven Husbands of Evelyn Hugo", author: "Taylor Reid Jenkins", cover: "/book1.jpg", comments: "" },
-  { id: 2, title: "The Secret Garden", author: "Frances Hodgson Burnett", cover: "/book2.jpg", comments: "" },
+  { id: 1, title: "The Seven Husbands of Evelyn Hugo", author: "Taylor Reid Jenkins", cover: "/evelynhugo.jpg", comments: "" },
+  { id: 2, title: "The Secret Garden", author: "Frances Hodgson Burnett", cover: "/secretgarden.jpg", comments: "" },
 ];
 
 const BookBoard = () => {
@@ -31,7 +31,7 @@ const BookBoard = () => {
             </div>
 
             {/* Shelf */}
-            <div className="flex gap-2 overflow-x-auto border-b-4 p-4">
+            <div className="flex gap-2 overflow-x-auto p-4">
                 <div className="flex w-full overflow-x-auto px-4 items-end border-b-8 border-rosewood pt-3">
                     {books.map((book) => (
                         <Book
@@ -40,13 +40,17 @@ const BookBoard = () => {
                         onClick={() => setSelectedBook(book)}
                         />
                     ))}
+                    <div>
+                        <Image src="/flowerpot.png" alt="flowerpot" width={90} height={38}/>
+                    </div>
                 </div>
             </div>
 
             {/* Info panel (empty shelf space) */}
-            <div className="mt-4 min-h-[150px] flex items-center justify-center text-center border-t-4 border-rosewood pt-4">
+            <div className="mt-4 min-h-[150px] flex items-center justify-center text-center border-rosewood pt-4">
                 {selectedBook ? (
                 <div>
+                    <Image src={selectedBook.cover} alt="book cover" width={100} height={150}/>
                     <h3 className="text-lg font-bold">{selectedBook.title}</h3>
                     <p className="italic text-rosewood">by {selectedBook.author}</p>
                     <p className="mt-2 text-gray-700">{selectedBook.comments}</p>
