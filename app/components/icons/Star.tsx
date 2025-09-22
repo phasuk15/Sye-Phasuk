@@ -30,7 +30,7 @@ const PixelStarHalf = () => (
   </div>
 );
 
-const PixelRating: React.FC<RatingProps> = ({ value, max = 5 }) => {
+const Star: React.FC<RatingProps> = ({ value, max = 5 }) => {
     const stars = [];
     for (let i = 1; i <= max; i++) {
         if (value >= i) {
@@ -44,3 +44,5 @@ const PixelRating: React.FC<RatingProps> = ({ value, max = 5 }) => {
 
   return <div className="flex gap-1">{stars}</div>;
 };
+
+export default Star;
