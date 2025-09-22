@@ -1,22 +1,40 @@
 import Image from "next/image";
 import { useState } from "react";
 import Book from "../components/Book";
+import { supabase } from "@/lib/supabaseClient";
+import { useEffect } from "react";
 
-interface Book {
+interface BookType {
   id: number;
   title: string;
-  author: string,
+  author: string;
   cover: string;
-  comments: string;
+  comment: string;
 }
 
-const books = [
-  { id: 1, title: "The Seven Husbands of Evelyn Hugo", author: "Taylor Reid Jenkins", cover: "/evelynhugo.jpg", comments: "" },
-  { id: 2, title: "The Secret Garden", author: "Frances Hodgson Burnett", cover: "/secretgarden.jpg", comments: "" },
-];
+const Dashboard = () => {
+    // The whole bookshelf - db for all books
+    const [books, setBooks] = useState<BookType[]>([]);
+    // For what book is selected and rendered 
+    const [selectedBook, setSelectedBook] = useState<BookType | null>(null);
 
-const BookBoard = () => {
-    const [selectedBook, setSelectedBook] = useState<Book | null>(null);
+    // Fetch data on mount
+    useEffect(() => {
+        const fetchBooks = async () => {
+        const { data, error } = await supabase
+            .schema("SyePhasuk")
+            .from("Bookshelf")
+            .select("*");
+
+        if (error) {
+            console.error("Error fetching books:", error);
+        } else {
+            setBooks(data || []);
+        }
+        };
+
+        fetchBooks();
+    }, []);
     
     return (  
         
@@ -33,44 +51,41 @@ const BookBoard = () => {
             {/* Shelf */}
             <div className="flex gap-2 overflow-x-auto px-4 ">
                 <div className="flex w-full overflow-x-auto px-4 items-end border-b-8 border-rosewood pt-3">
-                    {books.map((book) => (
-                        <Book
-                        key={book.id}
-                        id={book.id}
-                        onClick={() => setSelectedBook(book)}
-                        />
-                    ))}
-                    <div>
-                        <Image src="/flowerpot.png" alt="flowerpot" width={90} height={38}/>
-                    </div>
+                {books.map((book) => (
+                    <Book key={book.id} id={book.id} onClick={() => setSelectedBook(book)} />
+                ))}
+                <div>
+                    <Image src="/flowerpot.png" alt="flowerpot" width={90} height={38} />
+                </div>
                 </div>
             </div>
 
-            {/* Info panel (empty shelf space) */}
+
+            {/* Info panel */}
             <div className="min-h-[150px] flex items-center justify-center text-center border-rosewood pt-4 ">
                 {selectedBook ? (
-                <div className="flex flex-col md:flex-row gap-3 items-start p-4">
+                <div className="flex flex-col md:flex-row gap-3 items-center justify-evenly md:items-start p-4 ">
                     {/* Image column */}
-                    <div className="flex justify-center md:justify-centre items-center">
-                        <Image
+                    <div className="flex justify-center items-center">
+                    <Image
                         src={selectedBook.cover}
                         alt="book cover"
                         width={100}
                         height={150}
                         className="border-2 border-rosewood shadow-md"
-                        />
+                    />
                     </div>
 
                     {/* Info column */}
-                    <div className="md:w-30">
-                        <h3 className="text-lg font-bold">{selectedBook.title}</h3>
-                        <p className="italic text-rosewood">by {selectedBook.author}</p>
+                    <div className="md:w-30 ">
+                    <h3 className="text-lg font-bold">{selectedBook.title}</h3>
+                    <p className="italic text-rosewood">by {selectedBook.author}</p>
                     </div>
 
                     {/* Comments column */}
-                    <div>
-                        <h4 className="font-semibold text-mauve-brown">Comments</h4>
-                        <p className="mt-2 text-gray-700">{selectedBook.comments}</p>
+                    <div className="md:w-1/2">
+                    <p className="font-semibold text-mauve-brown">Thoughts</p>
+                    <p className="mt-2 text-gray-700">{selectedBook.comment}</p>
                     </div>
                 </div>
                 ) : (
@@ -82,4 +97,4 @@ const BookBoard = () => {
     );
 }
  
-export default BookBoard;
+export default Dashboard;
