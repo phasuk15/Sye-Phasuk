@@ -3,9 +3,9 @@
 import React from "react";
 import MusicPlayer from "./MusicPlayer";
 import BookBoard from "./BookBoard";
-import DashboardCard from "./DashboardCard";
 import GameCard from "./GameCard";
 import AnimeCard from "./AnimeCard";
+import Recommend from "./Recommend";
 import Image from "next/image";
 
 
@@ -92,9 +92,17 @@ const Dashboard = () => {
 
             <AnimeCard/>
 
-            <GameCard/>
+            <div className="flex justify-center items-center">
+                <MusicPlayer/>
+            </div>
 
-            <MusicPlayer/>
+            <div className="md:col-span-2">
+                <GameCard/>
+            </div>
+            <div className="md:col-span-2">
+                <Recommend/>
+            </div>
+
 
         </div>
     </div>

@@ -68,9 +68,9 @@ const AnimeCard = () => {
                 <button
                     onClick={() => toggle(anime.id)}
                     className={`flex w-full items-center justify-between px-4 py-3 text-left text-sm font-medium 
-                    focus:outline-none transition-colors border-t-0
+                    focus:outline-none transition-colors 
                     ${expanded === anime.id ? "bg-rosewood/30" : "bg-rosewood/10 hover:bg-rosewood/50"}
-                    border-x border-rosewood
+                    
                     ${expanded === anime.id ? "border-b-0" : ""}`}
                 >
                     <span>{anime.name}</span>
@@ -84,7 +84,7 @@ const AnimeCard = () => {
                 {expanded === anime.id && (
                     <div className="px-4 py-3 text-sm text-gray-700 bg-rosewood/30 border-x border-b border-rosewood">
                     <div className="grid grid-cols-2">
-                        <div className="border-2 border-raspberry">
+                        <div className="">
                         <Image src={anime.cover} alt={anime.cover} width={100} height={200}/>
                         </div>
                         <div className="px-2">
