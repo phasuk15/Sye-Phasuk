@@ -38,19 +38,18 @@ const Recommend = () => {
 
     // Insert new data
     const addRecommendation = async () => {
-        if (!newTitle.trim()) return;
-
         const { data, error } = await supabase
-        .schema("SyePhasuk")
-        .from("Recommend")
-        .insert([{ title: newTitle, comment: newComment }]) 
+            .schema("SyePhasuk")
+            .from("Recommend")
+            .insert([{ name: newTitle, comment: newComment }])
+            .select();
 
         if (error) {
-        console.error("Error inserting recommendation:", error);
+            console.error("Error inserting recommendation:", error);
         } else {
-        // Append the new row to state
-        setRecommendList((prev) => [...prev, ...(data || [])]);
-        setNewTitle(""); // reset input
+            setRecommendList((prev) => [...prev, ...(data || [])]);
+            setNewTitle("");
+            setNewComment("");
         }
     };
 
@@ -67,13 +66,14 @@ const Recommend = () => {
             <div className="p-3">
                 <h1 className="text-lg font-bold mb-2">TBR/TBW</h1>
                 {/* Render fetched list */}
-                <ul className="space-y-1">
+                <ul className="space-y-1 py-2">
                 {recommendList.map((rec) => (
                     <li key={rec.id} className="border-b border-rosewood/40 pb-1">
-                    {rec.name} <span className="italic text-xs">({rec.comment})</span>
+                    {rec.name} <p className="italic text-xs">{rec.comment}</p>
                     </li>
                 ))}
 
+                <p className="mt-4">Feel free to give me some recommendations!</p>
                 <div className="flex gap-2 mb-3">
                     <input
                         type="text"
@@ -81,6 +81,13 @@ const Recommend = () => {
                         onChange={(e) => setNewTitle(e.target.value)}
                         className="flex-1 border-2 border-rosewood px-2 py-1 bg-light-pink"
                         placeholder="Add new recommendation..."
+                    />
+                    <input
+                        type="text"
+                        value={newComment}
+                        onChange={(e) => setNewComment(e.target.value)}
+                        className="flex-1 border-2 border-rosewood px-2 py-1 bg-light-pink"
+                        placeholder="Add your comments..."
                     />
                     <button
                         onClick={addRecommendation}
