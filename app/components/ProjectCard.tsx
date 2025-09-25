@@ -1,5 +1,6 @@
 import ProjectGithub from "./icons/ProjGit";
 import Youtube from "./icons/Youtube";
+import Image from "next/image";
 
 interface ProjectCardProps {
   title: string;
@@ -8,9 +9,11 @@ interface ProjectCardProps {
   image: string;
   git?: string;
   yt?: string;
+  className?: string;
+
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, skills, image, git, yt }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, skills, image, git, yt, className = "", }) => {
   return (
     <div className="w-72 h-[27rem] bg-light-pink border-4 border-rosewood rounded-none shadow-[4px_4px_0px_#412722] hover:shadow-[6px_6px_0px_#412722] transition-all duration-200 font-pixelify">
       <div className="bg-rosewood text-light-pink px-3 py-1 flex items-center justify-between text-xs">
@@ -24,10 +27,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, skills, i
 
       {/* Image */}
       <div className="h-44 overflow-hidden border-b-4 border-rosewood">
-        <img
+        <Image
           src={image}
           alt={title}
-          className="w-full h-full object-cover image-pixelated"
+          width={500}
+          height={500}
+          className={`w-full h-full object-cover image-pixelated ${className}`}
         />
       </div>
 

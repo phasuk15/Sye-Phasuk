@@ -30,6 +30,16 @@ const ProjectsFull = () => {
                 yt="https://www.youtube.com/watch?v=SPUiCte_qtw"
                 />
             </a>
+            <a href="/dashboard">
+                <ProjectCard
+                title="Portfolio Dashboard"
+                description="Portfolio dashboard powered by Next.js and Supabase, using a database to manage and present information in an interactive interface."
+                skills={["Next.js", "Supabase", "Tailwind", "Typescript"]}
+                image="/persona.png"
+                git="https://github.com/phasuk15/Sye-Phasuk"
+                className="object-top"
+                />
+            </a>
             <a href="https://github.com/phasuk15/Herb-and-Spice" target="_blank" rel="noopener noreferrer">
                 <ProjectCard
                 title="Herb and Spice Thai Restaurant"
