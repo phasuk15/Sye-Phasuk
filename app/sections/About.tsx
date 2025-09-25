@@ -1,4 +1,5 @@
 import Button from "../components/Button";
+import Image from "next/image";
 
 const About = () => {
     return (  
@@ -9,7 +10,8 @@ const About = () => {
                 <p>I’m passionate about coding, design, and creating things that make people’s lives a little easier (and prettier).</p>
                 <p>Find more about me in my dashboard!</p>
             </div>
-            <a href="/dashboard" className="flex justify-center text-center font-jersey text-2xl mt-10">
+            <Image src="/avatar.png" alt="avatar" width={300} height={300}/>
+            <a href="/dashboard" className="flex justify-center text-center font-jersey text-2xl mt-3">
                 <Button
                     text="Dashboard"
                 />
