@@ -1,11 +1,15 @@
 import { useState } from "react";
+import Image from "next/image";
 
 interface GalleryCardProps {
   image: string;       // URL of the artwork
   caption?: string;    // Optional caption/title
+  className?: string;
+
 }
 
-const GalleryCard: React.FC<GalleryCardProps> = ({ image, caption }) => {
+  
+const GalleryCard: React.FC<GalleryCardProps> = ({ image, caption, className = "", }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -13,7 +17,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({ image, caption }) => {
       {/* Card */}
       <div
         onClick={() => setIsOpen(true)}
-        className="
+        className={`
           p-3
           border-3 border-raspberry 
           bg-white 
@@ -21,8 +25,8 @@ const GalleryCard: React.FC<GalleryCardProps> = ({ image, caption }) => {
           hover:shadow-[8px_8px_0px_#AE5969]
           transition-all 
           duration-200 
-          cursor-pointer font-pixelify
-        "
+          cursor-pointer font-pixelify ${className}
+        `}
       >
         {/* Pixel "window bar" */}
         <div className="bg-raspberry text-light-pink px-2 py-1 flex items-center justify-between text-xs mb-3 ">
@@ -35,10 +39,12 @@ const GalleryCard: React.FC<GalleryCardProps> = ({ image, caption }) => {
         </div>
 
         {/* Image */}
-        <img
+        <Image
           src={image}
           alt={caption || "Artwork"}
-          className="w-full h-auto object-contain border-2 border-raspberry"
+          width={400}
+          height={500}
+          className="h-auto object-contain border-2 border-raspberry"
         />
       </div>
 
