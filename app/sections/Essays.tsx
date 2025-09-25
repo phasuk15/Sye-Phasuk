@@ -8,7 +8,6 @@ import Link from "next/link";
 // import { getPosts } from "@/lib/getPosts";
 
 export default function Essays() {
-  // const posts = getPosts();
   const postsDir = path.join(process.cwd(), "content");
       const files = fs.readdirSync(postsDir);
   
@@ -32,6 +31,32 @@ export default function Essays() {
         Little windows into my thoughts — essays on things I find fascinating or worth pondering 💭🌸
       </p>
       <div className="flex flex-col items-center gap-5">
+        <ul className="space-y-6">
+            {posts.map((post) => (
+              <li key={post.slug} className="group relative font-pixelify">
+                <Link href={`/essays/${post.slug}`}>
+                  <div className="p-5 border-4 border-raspberry bg-white shadow-[6px_6px_0px_#412722] hover:shadow-[8px_8px_0px_#AE5969]transition-all duration-200 cursor-pointer">
+                    <div className="bg-raspberry text-light-pink px-2 py-1 flex items-center justify-between text-xs mb-3">
+                      <span className="font-bold">essay.txt</span>
+                      <div className="flex gap-1">
+                          <span className="w-3 h-3 bg-rosewood border border-plum-brown"></span>
+                          <span className="w-3 h-3 bg-light-pink border border-plum-brown"></span>
+                          <span className="w-3 h-3 bg-mauve-brown border border-plum-brown"></span>
+                      </div>
+                      </div>
+                          {/* Content */}
+                          <h2 className="text-xl font-bold text-raspberry group-hover:text-mauve-brown transition-colors">
+                              {post.title}
+                          </h2>
+                          <p className="text-xs text-plum-brown mb-2">{post.date}</p>
+                          <p className="text-sm text-mauve-brown group-hover:text-rosewood transition-colors">
+                              {post.description}
+                          </p>
+                      </div>
+                  </Link>
+                </li>
+              ))}
+          </ul>
         <a href="/essays">
           <Button text="See more essays" />
         </a>
