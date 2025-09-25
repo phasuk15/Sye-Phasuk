@@ -96,7 +96,7 @@ const Dashboard = () => {
                 <MusicPlayer/>
             </div>
 
-            <div className="md:col-span-2">
+            <div className="md:col-span-2 h-full">
                 <GameCard/>
             </div>
             <div className="md:col-span-2">
