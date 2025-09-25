@@ -1,7 +1,6 @@
-"use client";
 
-import { useEffect } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+// import { useEffect } from "react";
+// import { usePathname, useSearchParams } from "next/navigation";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Projects from "./sections/Projects";
@@ -10,18 +9,18 @@ import Essays from "./sections/Essays";
 import Contact from "./sections/Contact";
 
 const Home = () => {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+  // const pathname = usePathname();
+  // const searchParams = useSearchParams();
 
-  useEffect(() => {
-    const hash = window.location.hash;
-    if (pathname === "/" && hash) {
-      const element = document.getElementById(hash.substring(1));
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  }, [pathname, searchParams]);
+  // useEffect(() => {
+  //   const hash = window.location.hash;
+  //   if (pathname === "/" && hash) {
+  //     const element = document.getElementById(hash.substring(1));
+  //     if (element) {
+  //       element.scrollIntoView({ behavior: "smooth" });
+  //     }
+  //   }
+  // }, [pathname, searchParams]);
 
   return (
     <main>

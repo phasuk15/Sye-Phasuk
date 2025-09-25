@@ -1,3 +1,5 @@
+'use client'
+
 import GalleryCard from "../components/GalleryCard";
 import Button from "../components/Button";
 

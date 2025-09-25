@@ -1,10 +1,30 @@
 import EssayCard from "../components/EssayCard";
 import Button from "../components/Button";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import Link from "next/link";
+
 // import { getPosts } from "@/lib/getPosts";
 
 export default function Essays() {
   // const posts = getPosts();
-
+  const postsDir = path.join(process.cwd(), "content");
+      const files = fs.readdirSync(postsDir);
+  
+      const posts = files.map((file) => {
+          const filePath = path.join(postsDir, file);
+          const fileContents = fs.readFileSync(filePath, "utf-8");
+          const { data } = matter(fileContents);
+  
+          return {
+              slug: file.replace(".md", ""),
+              title: data.title,
+              date: data.date,
+              description: data.description,
+          };
+      });
+  
   return (
     <div className="min-h-screen max-w-2xl mx-auto px-4 flex flex-col items-center">
       <h1 className="font-jersey font-bold text-5xl py-12">Essays</h1>
