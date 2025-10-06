@@ -1,3 +1,5 @@
+'use client';
+
 import ProjectCard from "../components/ProjectCard";
 import Button from "../components/Button";
 
@@ -11,17 +13,23 @@ const Projects = () => {
     
         {/*Project Cards*/}
         <div className="mt-12 flex flex-wrap gap-10 justify-center">
-          <a href="https://github.com/Rimichu/Smart-Environment-Toolkit" target="_blank" rel="noopener noreferrer">
-            <ProjectCard
-              title="IoT Airport System"
-              description="Implementing the Iot Smart system into an airport environment with environmental monitoring, location tracking and AI security features."
-              skills={["Next.js", "React", "Tailwind CSS", "Arduino", "C", ""]}
-              image="/silly-pic.jpeg"
-              git="https://github.com/Rimichu/Smart-Environment-Toolkit"
-              yt="https://www.youtube.com/watch?v=fzZrk8lb2D8"
-            />
-          </a>
-          <a href="https://grp4-smart-system.vercel.app" target="_blank" rel="noopener noreferrer">
+          <div
+          onClick={() => window.open("https://github.com/Rimichu/Smart-Environment-Toolkit", "_blank")}
+          className="cursor-pointer"
+          >
+              <ProjectCard
+                  title="IoT Airport System"
+                  description="Implementing the Iot Smart system into an airport environment with environmental monitoring, location tracking and AI security features."
+                  skills={["Next.js", "React", "Tailwind CSS", "Arduino", "C", "MQTT"]}
+                  image="/silly-pic.jpeg"
+                  git="https://github.com/Rimichu/Smart-Environment-Toolkit"
+                  yt="https://www.youtube.com/watch?v=fzZrk8lb2D8"
+              />
+          </div>
+          <div
+          onClick={() => window.open("https://grp4-smart-system.vercel.app", "_blank")}
+          className="cursor-pointer"
+          >
             <ProjectCard
               title="IoT Smart System"
               description="A full-stack IoT smart system using Raspberry Pi devices to monitor the environemnt, users, devices and others in the lab."
@@ -30,7 +38,7 @@ const Projects = () => {
               git="https://github.com/Colley-A/SCC_330_SLS"
               yt="https://www.youtube.com/watch?v=SPUiCte_qtw"
             />
-          </a>
+          </div>
         </div>
         <a href="/projects"
           className="mt-10">

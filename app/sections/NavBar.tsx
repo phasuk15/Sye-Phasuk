@@ -48,19 +48,19 @@ export default function Navbar() {
 
           <Menu className="mt-16 font-pixelify text-black">
             <MenuItem>
-              <ScrollLink href="#about" onClick={() => setIsOpen(false)}>About</ScrollLink>
+              <ScrollLink as="span" href="#about" onClick={() => setIsOpen(false)}>About</ScrollLink>
             </MenuItem>
             <MenuItem>
-              <ScrollLink href="#projects" onClick={() => setIsOpen(false)}>Projects</ScrollLink>
+              <ScrollLink as="span" href="#projects" onClick={() => setIsOpen(false)}>Projects</ScrollLink>
             </MenuItem>
             <MenuItem>
-              <ScrollLink href="#gallery" onClick={() => setIsOpen(false)}>Gallery</ScrollLink>
+              <ScrollLink as="span" href="#gallery" onClick={() => setIsOpen(false)}>Gallery</ScrollLink>
             </MenuItem>
             <MenuItem>
-              <ScrollLink href="#essays" onClick={() => setIsOpen(false)}>Essays</ScrollLink>
+              <ScrollLink as="span" href="#essays" onClick={() => setIsOpen(false)}>Essays</ScrollLink>
             </MenuItem>
             <MenuItem>
-              <ScrollLink href="#contact" onClick={() => setIsOpen(false)}>Contact</ScrollLink>
+              <ScrollLink as="span" href="#contact" onClick={() => setIsOpen(false)}>Contact</ScrollLink>
             </MenuItem>
           </Menu>
         </Sidebar>
