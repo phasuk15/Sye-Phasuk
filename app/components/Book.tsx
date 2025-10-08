@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 
 interface BookProps {
-  id: string | number;
   onClick?: () => void;
 }
 
@@ -37,10 +36,8 @@ const bookStyles = [
   "w-12 h-40 bg-mauve-brown relative before:content-[''] before:absolute before:top-6 before:left-0 before:w-full before:h-1 before:bg-light-pink after:content-[''] after:absolute after:top-12 after:left-0 after:w-full after:h-1 after:bg-ocean",
 ];
 
-const Book: React.FC<BookProps> = ({ id, onClick }) => {
-  const randomStyle = useMemo(() => {
-    return bookStyles[Math.floor(Math.random() * bookStyles.length)];
-  }, [id]);
+const Book: React.FC<BookProps> = ({ onClick }) => {
+  const randomStyle = bookStyles[Math.floor(Math.random() * bookStyles.length)];
 
   return (
     <div

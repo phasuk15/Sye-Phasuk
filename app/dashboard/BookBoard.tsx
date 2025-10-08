@@ -52,7 +52,7 @@ const Dashboard = () => {
             <div className="flex gap-2 overflow-x-auto px-4 ">
                 <div className="flex w-full overflow-x-auto px-4 items-end border-b-8 border-rosewood pt-3">
                 {books.map((book) => (
-                    <Book key={book.id} id={book.id} onClick={() => setSelectedBook(book)} />
+                    <Book key={book.id} onClick={() => setSelectedBook(book)} />
                 ))}
                 <div>
                     <Image src="/flowerpot.png" alt="flowerpot" width={90} height={38} />
