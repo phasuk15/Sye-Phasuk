@@ -7,16 +7,9 @@ interface ButtonProps {
   className?: string;
 }
 
-const sizeClasses = {
-  sm: "px-4 py-2 text-xs",
-  md: "px-6 py-3 text-sm",
-  lg: "px-8 py-4 text-base",
-};
-
 const Button: React.FC<ButtonProps> = ({
   text,
   onClick,
-  size = "md",
   className = "",
 }) => {
   return (

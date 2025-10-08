@@ -65,7 +65,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({ image, caption, className = "
             </div>
 
             {/* Full image */}
-            <img
+            <Image
               src={image}
               alt={caption || "Full Artwork"}
               className="max-w-full max-h-[80vh] object-contain border-4 border-rosewood"
