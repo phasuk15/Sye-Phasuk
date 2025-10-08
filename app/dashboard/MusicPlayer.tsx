@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import React from "react";
 import { useState } from "react";
@@ -43,7 +44,7 @@ const MusicPlayer = () => {
                         transition={{ duration: 0.4 }}
                         className="w-full"
                     >
-                        <img
+                        <Image
                             src={songs[currentIndex].cover}
                             alt={songs[currentIndex].title}
                             className="w-42 h-42 mx-auto object-cover image-pixelated border-2 border-mauve-brown"

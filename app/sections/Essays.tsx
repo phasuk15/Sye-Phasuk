@@ -1,4 +1,3 @@
-import EssayCard from "../components/EssayCard";
 import Button from "../components/Button";
 import fs from "fs";
 import path from "path";
@@ -57,9 +56,9 @@ export default function Essays() {
                 </li>
               ))}
           </ul>
-        <a href="/essays" className="mt-10">
+        <Link href="/essays" className="mt-10">
           <Button text="See more essays" />
-        </a>
+        </Link>
       </div>
     </div>
   );

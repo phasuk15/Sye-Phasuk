@@ -3,8 +3,6 @@ import { supabase } from "@/lib/supabaseClient";
 import { useState } from "react";
 
 
-useEffect
-
 interface RecommendType {
     id: number;
     name: string;

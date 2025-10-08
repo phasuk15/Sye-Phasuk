@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Github from "../components/icons/Github";
 import Youtube from "../components/icons/Youtube";
 import Insta from "../components/icons/Insta";
