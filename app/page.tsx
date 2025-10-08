@@ -9,19 +9,6 @@ import Essays from "./sections/Essays";
 import Contact from "./sections/Contact";
 
 const Home = () => {
-  // const pathname = usePathname();
-  // const searchParams = useSearchParams();
-
-  // useEffect(() => {
-  //   const hash = window.location.hash;
-  //   if (pathname === "/" && hash) {
-  //     const element = document.getElementById(hash.substring(1));
-  //     if (element) {
-  //       element.scrollIntoView({ behavior: "smooth" });
-  //     }
-  //   }
-  // }, [pathname, searchParams]);
-
   return (
     <main>
       <section id="home">

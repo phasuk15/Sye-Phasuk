@@ -18,9 +18,12 @@ const jersey = Jersey_10({
   variable: "--font-jersey",
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Sye Phasuk",
   description: "Portfolio",
+  icons: {
+    icon: "/icon.png", 
+  },
 };
 
 export default function RootLayout({
