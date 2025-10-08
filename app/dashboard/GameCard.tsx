@@ -37,7 +37,7 @@ const GameCard = () => {
                 </div>
                 <div className="py-2">
                     <h2 className="font-bold">Minecraft</h2>
-                    <p>A collection of houses I've built ✨</p>
+                    <p>{"A collection of houses I've built ✨"}</p>
                     <div className="flex flex-wrap gap-2 mt-2">
                         <Image src="/mc1.png" alt="Minecraft build" width={120} height={80} className="object-cover border border-rosewood"/>
                         <Image src="/mc2.png" alt="Minecraft base" width={120} height={80} className="object-cover border border-rosewood"/>
