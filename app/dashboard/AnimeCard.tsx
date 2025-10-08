@@ -62,7 +62,7 @@ const AnimeCard = () => {
 
             {/* Scrollable area */}
             <div className="flex-1 overflow-y-auto p-3">
-            <h1 className="text-lg font-bold mb-4">Anime I've Watched</h1>
+            <h1 className="text-lg font-bold mb-4">Anime Watched</h1>
             {animeList.map((anime) => (
                 <div key={anime.id} className="border-2 border-rosewood">
                 <button

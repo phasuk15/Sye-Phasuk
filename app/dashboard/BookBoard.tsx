@@ -45,7 +45,7 @@ const Dashboard = () => {
                 <span className="w-2 h-2 bg-mauve-brown border border-plum-brown"></span>
             </div>
             <div className="p-3">
-                <h1 className="text-lg font-bold mb-2">Books I've Read</h1>
+                <h1 className="text-lg font-bold mb-2">Books Read</h1>
             </div>
 
             {/* Shelf */}
