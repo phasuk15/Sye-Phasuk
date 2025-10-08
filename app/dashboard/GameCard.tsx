@@ -1,10 +1,5 @@
 import Image from "next/image";
 
-const games = [
-  { title: "League of Legends", cover: "/game1.jpg" },
-  { title: "Minecraft", cover: "/game2.jpg" },
-];
-
 const GameCard = () => {
     return (  
         <div className="bg-light-pink border-4 border-raspberry shadow-[4px_4px_0px_#412722] transition-all hover:shadow-[6px_6px_0px_#AE5969] font-pixelify">
@@ -14,7 +9,7 @@ const GameCard = () => {
                 <span className="w-2 h-2 bg-mauve-brown border border-plum-brown"></span>
             </div>
             <div className="p-3">
-                <h1 className="text-lg font-bold mb-2">Games I'm Playing</h1>
+                <h1 className="text-lg font-bold mb-2">Games Played</h1>
                 <div className="border-b-2 border-raspberry py-2">
                     <h2 className="font-bold">League of Legends</h2>
                     <div className=" grid grid-cols-2">
