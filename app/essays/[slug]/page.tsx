@@ -13,6 +13,7 @@ export async function generateStaticParams() {
   }));
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function Essay({ params }: any) {
   const { slug } = await params;
   const filePath = path.join(process.cwd(), "content", slug + ".md");
