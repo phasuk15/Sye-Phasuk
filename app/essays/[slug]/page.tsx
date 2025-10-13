@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 
+
 export async function generateStaticParams() {
   const postsDir = path.join(process.cwd(), "content");
   const files = fs.readdirSync(postsDir);
