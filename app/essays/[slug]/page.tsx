@@ -3,12 +3,6 @@ import path from "path";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 
-interface EssayPageProps {
-  params: {
-    slug: string;
-  };
-}
-
 
 export async function generateStaticParams() {
   const postsDir = path.join(process.cwd(), "content");
@@ -19,8 +13,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Essay({ params }: EssayPageProps) {
-  const { slug } = params;
+export default async function Essay({ params }: any) {
+  const { slug } = await params;
   const filePath = path.join(process.cwd(), "content", slug + ".md");
   const fileContents = fs.readFileSync(filePath, "utf-8");
 
