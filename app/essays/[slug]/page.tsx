@@ -13,10 +13,12 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function Essay({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default async function Essay({ params }: any) {
+  const { slug } = await params;
   const filePath = path.join(process.cwd(), "content", slug + ".md");
   const fileContents = fs.readFileSync(filePath, "utf-8");
+
   const { data, content } = matter(fileContents);
 
   return (
@@ -27,7 +29,7 @@ export default function Essay({ params }: { params: { slug: string } }) {
         <ReactMarkdown
           components={{
             p: ({ children }) => (
-              <p className="mb-6 leading-relaxed">{children}</p>
+              <p className="mb-6 leading-relaxed">{children}</p> // 👈 margin-bottom creates spacing
             ),
             h2: ({ children }) => (
               <h2 className="mt-10 mb-4 text-2xl font-jersey text-raspberry">
