@@ -12,7 +12,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function Essay({ params }: { params: { slug: string } }) {
+export default async function Essay({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const filePath = path.join(process.cwd(), "content", slug + ".md");
   const fileContents = fs.readFileSync(filePath, "utf-8");
