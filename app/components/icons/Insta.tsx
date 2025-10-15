@@ -3,7 +3,7 @@ import Image from "next/image";
 const Insta = () => {
     return (  
         <a
-            href='https://www.instagram.com/star.sye'
+            href='https://www.instagram.com/starry.sye'
             target="_blank" 
             rel="noopener noreferrer" 
         >
