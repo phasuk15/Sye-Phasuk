@@ -6,6 +6,8 @@ const GalleryFull = () => {
   const artworks = [
     { src: "/artwork10.jpg", caption: "Artwork 10" },
     { src: "/artwork11.jpg", caption: "Artwork 11" },
+    { src: "/artwork12.jpg", caption: "Artwork 12" },
+    { src: "/artwork13.jpg", caption: "Artwork 13" },
     { src: "/artwork1.jpg", caption: "Artwork 1" },
     { src: "/artwork2.jpg", caption: "Artwork 2" },
     { src: "/artwork3.jpg", caption: "Artwork 3" },
