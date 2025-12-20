@@ -1,3 +1,9 @@
+---
+title: "Urban Digital Twins and Flood Management in Thailand"
+date: "20/12/2025"
+description: "A critical analysis of Thailand's current flooding modelling systems and how digital twins can be implemented into flood-prone areas for flood management."
+---
+
 # Urban Digital Twins and Flood Management in Thailand
 
 ## Abstract
