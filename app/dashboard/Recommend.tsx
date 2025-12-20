@@ -18,17 +18,17 @@ const Recommend = () => {
     // Fetch data
     useEffect(() => {
         const fetchRecommendations = async () => {
-        const { data, error } = await supabase
-            .schema("SyePhasuk") // 
-            .from("Recommend") // 
-            .select("*");
+            const { data, error } = await supabase
+                .schema("SyePhasuk") // 
+                .from("Recommend") // 
+                .select("*");
 
-        if (error) {
-            console.error("Error fetching recommendations:", error);
-        } else {
-            setRecommendList(data || []);
-        }
-        setLoading(false);
+            if (error) {
+                console.error("Error fetching recommendations:", error);
+            } else {
+                setRecommendList(data || []);
+            }
+            setLoading(false);
         };
 
         fetchRecommendations();
