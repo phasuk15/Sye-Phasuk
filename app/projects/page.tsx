@@ -17,6 +17,30 @@ const ProjectsFull = () => {
                 className="cursor-pointer"
                 >
                     <ProjectCard
+                        title="Warwick Hackthon AI Agent"
+                        description="24hr hackathon to implement an AI adaptable planner to help univeristy students manage scheduling and events using Gemini."
+                        skills={["Python", "React", "Tailwind CSS", "Supabase", "Gemini AI"]}
+                        image="/whack.JPG"
+                        git="https://github.com/MintyYami/adaptive-timetable-personaliser"
+                    />
+                </div>
+                <div
+                onClick={() => window.open("https://github.com/Rimichu/Smart-Environment-Toolkit", "_blank")}
+                className="cursor-pointer"
+                >
+                    <ProjectCard
+                        title="CLI Word Search"
+                        description="1hr mini-hackathon to implement a command-line interface game (word searhc) using Python."
+                        skills={["Python"]}
+                        image="/word_search.png"
+                        git="https://github.com/phasuk15/CLI-word-search"
+                    />
+                </div>
+                <div
+                onClick={() => window.open("https://github.com/Rimichu/Smart-Environment-Toolkit", "_blank")}
+                className="cursor-pointer"
+                >
+                    <ProjectCard
                         title="IoT Airport System"
                         description="Implementing the Iot Smart system into an airport environment with environmental monitoring, location tracking and AI security features."
                         skills={["Next.js", "React", "Tailwind CSS", "Arduino", "C", "MQTT"]}

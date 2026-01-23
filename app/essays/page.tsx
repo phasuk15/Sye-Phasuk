@@ -28,9 +28,13 @@ const EssaysFull = () => {
             </p>
 
             <ul className="space-y-6">
+                <li >
+                </li>
+            </ul>
+
+            <ul className="space-y-6">
                 {posts.map((post) => (
-                    <li key={post.slug} className="group relative font-pixelify"
-                    >
+                    <li key={post.slug} className="group relative font-pixelify">
                         <Link href={`/essays/${post.slug}`}>
                             <div className="
                             p-5 
