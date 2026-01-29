@@ -5,7 +5,9 @@ import Link from "next/link";
 
 const EssaysFull = () => {
     const postsDir = path.join(process.cwd(), "content");
-    const files = fs.readdirSync(postsDir);
+    const files = fs
+        .readdirSync(postsDir)
+        .filter((file) => file.endsWith(".md"));
 
     const posts = files.map((file) => {
         const filePath = path.join(postsDir, file);
