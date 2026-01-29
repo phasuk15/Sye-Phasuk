@@ -1,7 +1,5 @@
 "use client";
 import Image from "next/image";
-
-import React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Forward from "../components/icons/Forward";
@@ -48,6 +46,8 @@ const MusicPlayer = () => {
                             src={songs[currentIndex].cover}
                             alt={songs[currentIndex].title}
                             className="w-42 h-42 mx-auto object-cover image-pixelated border-2 border-mauve-brown"
+                            width={50}
+                            height={50}
                         />
                         <p className="mt-2 text-sm">{songs[currentIndex].title}</p>
                         <p className="text-xs text-pink-800">{songs[currentIndex].artist}</p>

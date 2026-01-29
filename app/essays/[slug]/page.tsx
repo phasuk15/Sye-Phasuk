@@ -22,14 +22,14 @@ export default async function Essay({ params }: any) {
   const { data, content } = matter(fileContents);
 
   return (
-    <article className="min-h-screen max-w-5xl mx-auto px-4 mt-24 flex flex-col items-center">
+    <article className="min-h-screen max-w-3xl mx-auto px-4 mt-24 flex flex-col items-center">
       <h1 className="font-jersey font-bold text-5xl">{data.title}</h1>
       <p className="text-sm text-gray-500">{data.date}</p>
       <div className="py-12 w-full text-plum-brown">
         <ReactMarkdown
           components={{
             p: ({ children }) => (
-              <p className="mb-6 leading-relaxed">{children}</p> // 👈 margin-bottom creates spacing
+              <p className="mb-6 leading-relaxed">{children}</p> 
             ),
             h2: ({ children }) => (
               <h2 className="mt-10 mb-4 text-2xl font-jersey text-raspberry">
