@@ -13,7 +13,7 @@ const ProjectsFull = () => {
             {/*Project Cards*/}
             <div className="mt-12 flex flex-wrap gap-8 justify-center">
                 <div
-                onClick={() => window.open("https://github.com/Rimichu/Smart-Environment-Toolkit", "_blank")}
+                onClick={() => window.open("https://github.com/MintyYami/adaptive-timetable-personaliser", "_blank")}
                 className="cursor-pointer"
                 >
                     <ProjectCard
@@ -25,7 +25,7 @@ const ProjectsFull = () => {
                     />
                 </div>
                 <div
-                onClick={() => window.open("https://github.com/Rimichu/Smart-Environment-Toolkit", "_blank")}
+                onClick={() => window.open("https://github.com/phasuk15/CLI-word-search", "_blank")}
                 className="cursor-pointer"
                 >
                     <ProjectCard
