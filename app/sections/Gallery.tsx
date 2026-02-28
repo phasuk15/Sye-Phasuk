@@ -10,7 +10,7 @@ const Gallery = () => {
             <p className="font-pixelify text-center leading-relaxed">Take a peek into a cozy little gallery of my creations! 🖌️🎨</p>
             <div className="mt-10 flex flex-wrap">
                 <GalleryCard 
-                    image="/artwork10.jpg"
+                    image="/artwork/artwork10.jpg"
                     className=""
                 />
             </div>  
