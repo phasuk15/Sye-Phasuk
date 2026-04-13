@@ -34,7 +34,7 @@ const Dashboard = () => {
           <div className="flex flex-col md:flex-row gap-6 items-start">
 
             {/* Avatar frame */}
-            <div className="flex-shrink-0 mx-auto md:mx-0 border-4 border-mauve-brown shadow-[4px_4px_0px_#8b5c6e] relative">
+            <div className="flex-shrink-0 mx-auto md:mx-0 border-4 border-mauve-brown shadow-[4px_4px_0px_#8b5c6e] relative py-5">
               <Image
                 src="/persona.png"
                 alt="sye"
@@ -115,7 +115,7 @@ const Dashboard = () => {
                     <span className="flex-1 h-px bg-mauve-brown opacity-30"></span>
                   </p>
                   <ul className="flex flex-col gap-2">
-                    {["Volleyball", "Bouldering", "Cats", "THAILAND", "Cool animation"].map((item) => (
+                    {["Volleyball", "Bouldering", "Cats", "THAILAND", "Old Barbie films"].map((item) => (
                       <li key={item} className="text-[11px] text-[#5a3a45] flex gap-2">
                         <span className="text-raspberry">✦</span> {item}
                       </li>
@@ -198,8 +198,8 @@ const Dashboard = () => {
         <BookBoard />
         <AnimeCard />
         <MusicPlayer />
-        {/* <GameCard />
-        <Recommend /> */}
+        {/* <GameCard /> */}
+        <Recommend />
       </div>
     </div>
   );
