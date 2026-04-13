@@ -10,7 +10,7 @@ import Image from "next/image";
 
 const Dashboard = () => {
   return (
-    <div className="min-h-screen max-w-4xl mx-auto px-4 flex flex-col items-center pb-16">
+    <div className="min-h-screen max-w-2xl mx-auto px-4 flex flex-col items-center pb-16">
       <h1 className="font-jersey font-bold text-5xl pt-24 pb-6">Dashbaord</h1>
 
       {/* Introduction */}
@@ -38,7 +38,7 @@ const Dashboard = () => {
               <Image
                 src="/persona.png"
                 alt="sye"
-                width={260}
+                width={280}
                 height={300}
                 className="block"
               />
@@ -60,7 +60,7 @@ const Dashboard = () => {
 
                 {/* Stat chips */}
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {["Sagittarius", "Thai", "21", "Artist", "UK"].map((s) => (
+                  {["Sagittarius", "Thai", "21", "UK"].map((s) => (
                     <span
                       key={s}
                       className="text-mauve-brown text-[11px] px-3 py-0.5 tracking-wide"
@@ -84,11 +84,11 @@ const Dashboard = () => {
               {/* Like tags */}
               <div className="flex flex-wrap gap-2">
                 {[
-                  { emoji: "🏐", label: "volleyball" },
-                  { emoji: "🧗", label: "bouldering" },
-                  { emoji: "🐱", label: "cats" },
-                  { emoji: "🇹🇭", label: "thailand" },
-                  { emoji: "✨", label: "creative" },
+                  { emoji: "🏅", label: "sports" },
+                  { emoji: "🎮", label: "gaming" },
+                  { emoji: "🖋️", label: "journal" },
+                  { emoji: "🎓", label: "student" },
+                  { emoji: "🎨", label: "arts" },
                 ].map(({ emoji, label }) => (
                   <span
                     key={label}
@@ -115,7 +115,7 @@ const Dashboard = () => {
                     <span className="flex-1 h-px bg-mauve-brown opacity-30"></span>
                   </p>
                   <ul className="flex flex-col gap-2">
-                    {["Volleyball", "Bouldering", "Cats", "Thailand", "Being creative"].map((item) => (
+                    {["Volleyball", "Bouldering", "Cats", "THAILAND", "Cool animation"].map((item) => (
                       <li key={item} className="text-[11px] text-[#5a3a45] flex gap-2">
                         <span className="text-raspberry">✦</span> {item}
                       </li>
@@ -137,7 +137,7 @@ const Dashboard = () => {
                     <span className="flex-1 h-px bg-mauve-brown opacity-30"></span>
                   </p>
                   <ul className="flex flex-col gap-2">
-                    {["Art blocks", "Mess & clutter", "Cliffhangers", "Being late"].map((item) => (
+                    {["UK weather", "Dubbed anime", "All nighters", "Unfinished WIPs"].map((item) => (
                       <li key={item} className="text-[11px] text-[#5a3a45] flex gap-2">
                         <span className="text-mauve-brown">✦</span> {item}
                       </li>
