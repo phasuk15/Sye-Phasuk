@@ -1,28 +1,27 @@
 'use client'
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { supabase } from "@/lib/supabaseClient";
-import { useEffect } from "react";
-import { ChevronRight } from "lucide-react";
 import Star from "../components/icons/Star";
 
 interface AnimeType {
-  id: number;
-  name: string;
-  status: string;
-  cover: string;
-  fave_char: string;
-  rating: number;
-  comment: string;
+    id: number;
+    name: string;
+    status: string;
+    cover: string;
+    fave_char: string;
+    rating: number;
+    comment: string;
 }
 
-
 const AnimeCard = () => {
-
-    const [expanded, setExpanded] = useState<number | null>(null);
+    const [selected, setSelected] = useState<AnimeType | null>(null);
     const [animeList, setAnimeList] = useState<AnimeType[]>([]);
     const [loading, setLoading] = useState(true);
+    const [canScrollLeft, setCanScrollLeft] = useState(false);
+    const [canScrollRight, setCanScrollRight] = useState(true);
+    const scrollRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const fetchAnime = async () => {
@@ -30,7 +29,6 @@ const AnimeCard = () => {
             .schema("SyePhasuk")
             .from("AnimeList")
             .select("*");
-
         if (error) {
             console.error("Error fetching anime:", error);
         } else {
@@ -38,69 +36,261 @@ const AnimeCard = () => {
         }
         setLoading(false);
         };
-
         fetchAnime();
     }, []);
 
-    const toggle = (id: number) => {
-        setExpanded(expanded === id ? null : id);
+    // Recheck scroll arrows after list loads
+    useEffect(() => {
+        updateScrollButtons();
+    }, [animeList]);
+
+    const updateScrollButtons = () => {
+        const el = scrollRef.current;
+        if (!el) return;
+        setCanScrollLeft(el.scrollLeft > 4);
+        setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
     };
 
-    if (loading) {
-        return <p className="text-center text-gray-500">Loading anime...</p>;
-    }
+    const scroll = (dir: "left" | "right") => {
+        scrollRef.current?.scrollBy({ left: dir === "right" ? 300 : -300, behavior: "smooth" });
+    };
 
+    const handleSelect = (anime: AnimeType) => {
+        setSelected((prev) => (prev?.id === anime.id ? null : anime));
+    };
 
-    return (  
-        <div className="bg-light-pink border-4 border-raspberry shadow-[4px_4px_0px_#412722] transition-all hover:shadow-[6px_6px_0px_#AE5969] font-pixelify h-[450px] flex flex-col">
-            {/* Window buttons */}
-            <div className="flex gap-1 justify-end p-1 bg-rosewood">
-            <span className="w-2 h-2 bg-light-pink border border-plum-brown"></span>
-            <span className="w-2 h-2 bg-raspberry border border-plum-brown"></span>
-            <span className="w-2 h-2 bg-mauve-brown border border-plum-brown"></span>
-            </div>
+    return (
+        <div className="w-full font-pixelify bg-light-pink border-4 border-rosewood shadow-[6px_6px_0px_#412722] transition-all hover:shadow-[8px_8px_0px_#412722]">
 
-            {/* Scrollable area */}
-            <div className="flex-1 overflow-y-auto p-3">
-            <h1 className="text-lg font-bold mb-4">Anime Watched</h1>
-            {animeList.map((anime) => (
-                <div key={anime.id} className="border-2 border-rosewood">
-                <button
-                    onClick={() => toggle(anime.id)}
-                    className={`flex w-full items-center justify-between px-4 py-3 text-left text-sm font-medium 
-                    focus:outline-none transition-colors 
-                    ${expanded === anime.id ? "bg-rosewood/30" : "bg-rosewood/10 hover:bg-rosewood/50"}
-                    
-                    ${expanded === anime.id ? "border-b-0" : ""}`}
-                >
-                    <span>{anime.name}</span>
-                    <ChevronRight
-                    className={`h-4 w-4 transition-transform ${
-                        expanded === anime.id ? "rotate-90" : ""
-                    }`}
-                    />
-                </button>
-
-                {expanded === anime.id && (
-                    <div className="px-4 py-3 text-sm text-gray-700 bg-rosewood/30 border-x border-b border-rosewood">
-                    <div className="grid grid-cols-2">
-                        <div className="">
-                        <Image src={anime.cover} alt={anime.cover} width={100} height={200}/>
-                        </div>
-                        <div className="px-2">
-                        <Star value={anime.rating}/>
-                        <p><span className="italic">Status: </span><span className="font-bold">{anime.status}</span></p>
-                        <p><span className="italic">Favourite character: </span><span className="font-bold">{anime.fave_char}</span></p>
-                        </div>
-                    </div>
-                    <div className="mt-2">{anime.comment}</div>
-                    </div>
-                )}
-                </div>
-            ))}
+        {/* Titlebar */}
+        <div className="flex items-center justify-between px-3 py-1.5 bg-rosewood">
+            <span className="text-light-pink text-[9px] tracking-widest opacity-70">
+            animelist.exe
+            </span>
+            <div className="flex gap-1.5">
+            <span className="w-3 h-3 bg-light-pink border border-white/20"></span>
+            <span className="w-3 h-3 bg-raspberry border border-white/20"></span>
+            <span className="w-3 h-3 bg-mauve-brown border border-white/20"></span>
             </div>
         </div>
+
+        <div className="p-5 flex flex-col gap-4">
+
+            {/* Section label */}
+            <p className="text-raspberry tracking-widest flex items-center gap-2">
+            ✦ anime watched
+            <span className="flex-1 h-px bg-mauve-brown opacity-30"></span>
+            </p>
+
+            {loading ? (
+            <p className="text-[9px] text-mauve-brown tracking-widest text-center animate-pulse py-8">
+                ✦ loading... ✦
+            </p>
+            ) : (
+            /* Scroll strip container */
+            <div className="relative">
+
+                {/* Left fade + arrow */}
+                <div
+                className={`absolute left-0 top-0 bottom-0 z-10 w-14 flex items-center justify-start
+                            bg-gradient-to-r from-light-pink via-light-pink/80 to-transparent
+                            pointer-events-none transition-opacity duration-200
+                            ${canScrollLeft ? "opacity-100" : "opacity-0"}`}
+                >
+                <button
+                    onClick={() => scroll("left")}
+                    className="pointer-events-auto w-8 h-8 flex items-center justify-center
+                            bg-rosewood border-2 border-rosewood text-light-pink
+                            text-base font-bold shadow-[2px_2px_0px_#412722]
+                            hover:bg-raspberry transition-colors focus:outline-none ml-1"
+                >
+                    ‹
+                </button>
+                </div>
+
+                {/* Right fade + arrow */}
+                <div
+                className={`absolute right-0 top-0 bottom-0 z-10 w-14 flex items-center justify-end
+                            bg-gradient-to-l from-light-pink via-light-pink/80 to-transparent
+                            pointer-events-none transition-opacity duration-200
+                            ${canScrollRight ? "opacity-100" : "opacity-0"}`}
+                >
+                <button
+                    onClick={() => scroll("right")}
+                    className="pointer-events-auto w-8 h-8 flex items-center justify-center
+                            bg-rosewood border-2 border-rosewood text-light-pink
+                            text-base font-bold shadow-[2px_2px_0px_#412722]
+                            hover:bg-raspberry transition-colors focus:outline-none mr-1"
+                >
+                    ›
+                </button>
+                </div>
+
+                {/* The scrollable row */}
+                <div
+                ref={scrollRef}
+                onScroll={updateScrollButtons}
+                className="flex gap-3 overflow-x-auto scroll-smooth py-2 px-1"
+                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+                >
+                {animeList.map((anime) => {
+                    const isSelected = selected?.id === anime.id;
+                    return (
+                    <button
+                        key={anime.id}
+                        onClick={() => handleSelect(anime)}
+                        className="relative flex-shrink-0 focus:outline-none group/card"
+                        style={{ width: 150 }}
+                    >
+                        {/* Cover + overlay wrapper */}
+                        <div
+                        className={`relative overflow-hidden border-2 transition-all duration-200
+                            ${isSelected
+                            ? "border-raspberry scale-105 shadow-[0_4px_0px_#c0396b]"
+                            : "border-mauve-brown group-hover/card:border-raspberry group-hover/card:scale-105 group-hover/card:shadow-[0_4px_0px_#c0396b]"
+                            }`}
+                        style={{ width: 150, height: 210 }}
+                        >
+                        <Image
+                            src={anime.cover}
+                            alt={anime.name}
+                            width={150}
+                            height={210}
+                            className="block w-full h-full object-cover"
+                        />
+
+                        {/* Dark gradient overlay — shows on hover or when selected */}
+                        <div
+                            className={`absolute inset-0 flex flex-col justify-end p-2.5 transition-opacity duration-200
+                            ${isSelected ? "opacity-100" : "opacity-0 group-hover/card:opacity-100"}`}
+                            style={{
+                            background:
+                                "linear-gradient(to top, rgba(65,39,34,0.95) 0%, rgba(65,39,34,0.6) 50%, transparent 100%)",
+                            }}
+                        >
+                            <p className="text-light-pink font-bold leading-snug mb-1 ">
+                            {anime.name}
+                            </p>
+
+                            <div
+                            className="flex items-center gap-1.5 pt-1.5"
+                            style={{ borderTop: "1px solid rgba(247,221,228,0.25)" }}
+                            >
+                            <span
+                                className="text-[5px] text-light-pink/60 tracking-wide px-1.5"
+                                style={{
+                                borderTop: "1px solid rgba(247,221,228,0.35)",
+                                borderBottom: "1px solid rgba(247,221,228,0.35)",
+                                }}
+                            >
+                                {anime.status}
+                            </span>
+                            </div>
+
+                            {/* Inline star rating */}
+                            <div className="mt-1">
+                            <Star value={anime.rating} />
+                            </div>
+                        </div>
+
+                        {/* Selected indicator pip */}
+                        {isSelected && (
+                            <div className="absolute top-1.5 right-1.5 w-2 h-2 bg-raspberry border border-light-pink" />
+                        )}
+                        </div>
+                    </button>
+                    );
+                })}
+                </div>
+            </div>
+            )}
+
+            {/* Detail panel below strip */}
+            {selected ? (
+            <div className="bg-[#fce8f0] border-2 border-raspberry shadow-[3px_3px_0px_#c0396b] p-4 relative">
+                <span className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-raspberry"></span>
+                <span className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-raspberry"></span>
+                <span className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-raspberry"></span>
+                <span className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-raspberry"></span>
+
+                <div className="flex flex-col md:flex-row gap-4">
+                {/* Cover */}
+                <div className="flex-shrink-0 mx-auto md:mx-0 ">
+                    <Image
+                    src={selected.cover}
+                    alt={selected.name}
+                    width={150}
+                    height={140}
+                    className="block"
+                    style={{ width: 120, height: 210, objectFit: "cover" }}
+                    />
+                </div>
+
+                {/* Info */}
+                <div className="flex flex-col gap-3 flex-1">
+                    <div>
+                    <h3
+                        className="text-base font-bold text-rosewood leading-snug mb-2 text-[18px]"
+                        style={{ textShadow: "2px 2px 0 rgba(65,39,34,0.1)" }}
+                    >
+                        {selected.name}
+                    </h3>
+                    <div className="flex flex-wrap items-center gap-2">
+                        <span
+                        className="text-mauve-brown text-[9px] px-2 tracking-wide"
+                        style={{
+                            borderTop: "1.5px solid #8b5c6e",
+                            borderBottom: "1.5px solid #8b5c6e",
+                        }}
+                        >
+                        {selected.status}
+                        </span>
+                        <span className="text-[9px] text-[#5a3a45] bg-light-pink border border-mauve-brown px-2 py-0.5">
+                        fave: {selected.fave_char}
+                        </span>
+                    </div>
+                    </div>
+
+                    <Star value={selected.rating} />
+
+                    {/* Thoughts */}
+                    <div className="bg-[#fdf0f4] border-2 border-mauve-brown p-3 relative overflow-hidden">
+                    <div
+                        className="absolute top-0 left-0 right-0 h-0.5 opacity-30"
+                        style={{
+                        background:
+                            "repeating-linear-gradient(90deg, #8b5c6e 0px, #8b5c6e 4px, transparent 4px, transparent 8px)",
+                        }}
+                    ></div>
+                    <p className="text-raspberry text-[13px] tracking-widest mb-2 flex items-center gap-2">
+                        ✦ thoughts
+                        <span className="flex-1 h-px bg-mauve-brown opacity-30"></span>
+                    </p>
+                    <p className="text-[11px] text-[#5a3a45] leading-relaxed">
+                        {selected.comment}
+                    </p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            ) : (
+            <div className="bg-[#fdf0f4] border-2 border-mauve-brown p-4 relative overflow-hidden">
+                <div
+                className="absolute top-0 left-0 right-0 h-0.5 opacity-30"
+                style={{
+                    background:
+                    "repeating-linear-gradient(90deg, #8b5c6e 0px, #8b5c6e 4px, transparent 4px, transparent 8px)",
+                }}
+                ></div>
+                <p className="text-[9px] text-mauve-brown text-center tracking-widest">
+                ✦ click a cover to see details ✦
+                </p>
+            </div>
+            )}
+
+        </div>
+        </div>
     );
-}
- 
+};
+
 export default AnimeCard;
