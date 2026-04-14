@@ -22,7 +22,7 @@ export const metadata = {
   title: "Sye Phasuk",
   description: "Portfolio",
   icons: {
-    icon: "/favicon.png", 
+    icon: "/icons/favicon.png", 
   },
 };
 
