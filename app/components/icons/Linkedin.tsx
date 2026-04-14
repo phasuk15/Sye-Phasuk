@@ -8,7 +8,7 @@ const Linkedin = () => {
             rel="noopener noreferrer" 
         >
             <Image 
-                src="/linkedin.png"
+                src="/icons/linkedin.png"
                 alt="Linkedin"
                 width={32}
                 height={32}

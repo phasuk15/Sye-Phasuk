@@ -21,7 +21,7 @@ const Youtube: React.FC<YoutubeProps> = ({
       {...props}
     >
       <Image
-        src="/youtube.png"
+        src="/icons/youtube.png"
         alt={alt}
         width={size}
         height={size}

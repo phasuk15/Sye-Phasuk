@@ -8,7 +8,7 @@ const Insta = () => {
             rel="noopener noreferrer" 
         >
             <Image 
-                src="/insta.png"
+                src="/icons/insta.png"
                 alt="instagram"
                 width={32}
                 height={32}

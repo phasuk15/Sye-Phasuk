@@ -8,7 +8,7 @@ const Github = () => {
             rel="noopener noreferrer" 
         >
             <Image 
-                src="/github.png"
+                src="/icons/github.png"
                 alt="github"
                 width={32}
                 height={32}
