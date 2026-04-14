@@ -17,10 +17,10 @@ const Home = () => {
       <section id="about">
         <About />
       </section>
-       <section id="projects">
-        <Projects />
-      </section>
-       <section id="gallery">
+        <section id="projects">
+          <Projects />
+        </section>
+        <section id="gallery">
         <Gallery />
       </section>
       <section id="essays">
