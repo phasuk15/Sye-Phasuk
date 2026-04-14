@@ -35,7 +35,6 @@ const EssaysFull = () => {
                 <li className="group relative font-pixelify">
                     <Link href="/file/Urban_Digital_Twins.pdf" target="_blank">
                         <EssayCard
-                            date="04/12/25"
                             title="Urban Digital Twins"
                             description="An analysis into urban digital twins and how they can be used in for flood risk management in Thailand."
                             fileLabel="essay.pdf"
@@ -46,7 +45,6 @@ const EssaysFull = () => {
                 <li className="group relative font-pixelify">
                     <Link href="/file/Spatial_Analysis_of_Road_Infrastructure.pdf" target="_blank">
                         <EssayCard
-                            date="22/01/26"
                             title="Spatial Analysis of Road Infrastructure"
                             description="An analysis on the datasets Thailand Road Accidents and the road types that map the streets of Thailand, exploring the relationship between the two."
                             fileLabel="essay.pdf"
@@ -59,7 +57,6 @@ const EssaysFull = () => {
                     <li key={post.slug} className="group relative font-pixelify">
                     <Link href={`/essays/${post.slug}`}>
                         <EssayCard
-                        date={post.date}
                         title={post.title}
                         description={post.description}
                         fileLabel="essay.txt"
