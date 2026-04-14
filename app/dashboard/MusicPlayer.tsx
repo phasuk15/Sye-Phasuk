@@ -11,7 +11,7 @@ const songs = [
         title: "Nod Krai Theme",
         artist: "Aurora",
         url: "https://youtu.be/RuXa_yxZMGI?si=KL1ezMZpqlJYN9ew",
-        cover: "/aurora.avif",
+        cover: "/music/aurora.avif",
     },
     {
         title: "My Way",

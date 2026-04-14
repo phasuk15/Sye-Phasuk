@@ -20,7 +20,7 @@ const ProjectsFull = () => {
                         title="Warwick Hackthon AI Agent"
                         description="24hr hackathon to implement an AI adaptable planner to help univeristy students manage scheduling and events using Gemini."
                         skills={["Python", "React", "Tailwind CSS", "Supabase", "Gemini AI"]}
-                        image="/whack.JPG"
+                        image="/projects/whack.JPG"
                         git="https://github.com/MintyYami/adaptive-timetable-personaliser"
                     />
                 </div>
@@ -32,7 +32,7 @@ const ProjectsFull = () => {
                         title="CLI Word Search"
                         description="1hr mini-hackathon to implement a command-line interface game (word searhc) using Python."
                         skills={["Python"]}
-                        image="/word_search.png"
+                        image="/projects/word_search.png"
                         git="https://github.com/phasuk15/CLI-word-search"
                     />
                 </div>
@@ -44,7 +44,7 @@ const ProjectsFull = () => {
                         title="IoT Airport System"
                         description="Implementing the Iot Smart system into an airport environment with environmental monitoring, location tracking and AI security features."
                         skills={["Next.js", "React", "Tailwind CSS", "Arduino", "C", "MQTT"]}
-                        image="/silly-pic.jpeg"
+                        image="/projects/silly-pic.jpeg"
                         git="https://github.com/Rimichu/Smart-Environment-Toolkit"
                         yt="https://www.youtube.com/watch?v=fzZrk8lb2D8"
                     />
@@ -57,7 +57,7 @@ const ProjectsFull = () => {
                     title="IoT Smart System"
                     description="A full-stack IoT smart system using Raspberry Pi devices to monitor the environemnt, users, devices and others in the lab."
                     skills={["Next.js", "MongoDB", "Tailwind", "Raspberry Pico"]}
-                    image="/RaspberryPi.jpg"
+                    image="/projects/RaspberryPi.jpg"
                     git="https://github.com/Colley-A/SCC_330_SLS"
                     yt="https://www.youtube.com/watch?v=SPUiCte_qtw"
                     />
@@ -83,7 +83,7 @@ const ProjectsFull = () => {
                     title="Herb and Spice Thai Restaurant"
                     description="A website for my family restaurant with a booking system using Calendly. "
                     skills={["Next.js", "Typescript", "Tailwind", "Calendly"]}
-                    image="/herbandspice.jpg"
+                    image="/projects/herbandspice.jpg"
                     git="https://github.com/phasuk15/Herb-and-Spice"
                     />
                 </div>
@@ -96,7 +96,7 @@ const ProjectsFull = () => {
                     description="Presented a poster at a competition for women and non-binary students in
                     Computing in Liverpool 2024 exploring the use of AI and technology in the Chinese art community (I drew everything myself :0)."
                     skills={["Procreate"]}
-                    image="/lovelace_liverpool.jpg"
+                    image="/projects/lovelace_liverpool.jpg"
                     yt="https://www.youtube.com/watch?v=3-qxv5WFke4"
                     />
                 </div>
@@ -109,7 +109,7 @@ const ProjectsFull = () => {
                     description="Designed and implemented a Flutter app to connect users with nearby sports partners, incorporating intuitive UI
                     and efficient local storage with SQLite"
                     skills={["Next.js", "MongoDB", "Tailwind", "Raspberry Pico"]}
-                    image="/sportmate.png"
+                    image="/projects/sportmate.png"
                     git="https://github.com/stasnowaczyk/sportmate_flutter"
                     />
                 </div>
