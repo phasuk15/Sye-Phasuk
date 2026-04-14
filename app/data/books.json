@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "The Seven Husbands of Evelyn Hugo",
+    "author": "Taylor Reid Jenkins",
+    "cover": "/covers/books/evelynhugo.jpg",
+    "comment": "A very gripping story about the price of fame and fortune, didn't think I'd be into a book about Hollywood but Evelyn was such an intriguing character."
+  },
+  {
+    "id": 2,
+    "title": "The Secret Garden",
+    "author": "Frances Hodgson Burnett",
+    "cover": "/covers/books/secretgarden.jpg",
+    "comment": "A whimsical book about the seemingly mundane activities of children who bloom by going outside (imagine). Really enjoyed the writing and the development of these characters as they discover what I guess we would call nowadays affirmation and optimism haha."
+  },
+  {
+    "id": 3,
+    "title": "Six of Crows",
+    "author": "Leigh Bardugo",
+    "cover": "/covers/books/crows.jpg",
+    "comment": "Ahh what a cliffhanger, it was very gripping and thrilling. Had unique worldbuilding and amazing characters, I loved them all. Can't wait to read the sequel :D."
+  }
+]

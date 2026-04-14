@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import Book from "../components/Book";
-import { supabase } from "@/lib/supabaseClient";
+import bookData from "../data/books.json"
 
 interface BookType {
     id: number;
@@ -11,26 +11,10 @@ interface BookType {
     comment: string;
 }
 
+const books: BookType[] = bookData;
+
 const BookBoard = () => {
-    const [books, setBooks] = useState<BookType[]>([]);
     const [selectedBook, setSelectedBook] = useState<BookType | null>(null);
-
-    useEffect(() => {
-        const fetchBooks = async () => {
-        const { data, error } = await supabase
-            .schema("SyePhasuk")
-            .from("Bookshelf")
-            .select("*");
-
-        if (error) {
-            console.error("Error fetching books:", error);
-        } else {
-            setBooks(data || []);
-        }
-        };
-
-        fetchBooks();
-    }, []);
 
     return (
         <div className="w-full font-pixelify bg-light-pink border-4 border-rosewood shadow-[6px_6px_0px_#412722] transition-all hover:shadow-[8px_8px_0px_#412722]">
@@ -47,7 +31,6 @@ const BookBoard = () => {
         </div>
 
         <div className="p-5 flex flex-col gap-5">
-            {/* Section label */}
             <p className="text-raspberry tracking-widest flex items-center gap-2">
             ✦ books read
             <span className="flex-1 h-px bg-mauve-brown opacity-30"></span>
@@ -55,55 +38,34 @@ const BookBoard = () => {
 
             {/* Shelf */}
             <div className="relative">
-            {/* Shelf board */}
             <div className="flex items-end overflow-x-auto gap-1 pb-0 border-b-[6px] border-rosewood shadow-[0_4px_0px_#412722]">
                 {books.map((book) => (
-                <div
+                <Book
                     key={book.id}
+                    seed={book.id}
                     onClick={() => setSelectedBook(book)}
-                    className={`cursor-pointer transition-all duration-150 hover:-translate-y-1 ${
-                    selectedBook?.id === book.id ? "-translate-y-2" : ""
-                    }`}
-                >
-                    <Book />
-                </div>
-                ))}
-                {/* Flowerpot at end of shelf */}
-                <div className="flex-shrink-0 ml-auto">
-                <Image
-                    src="/flowerpot.png"
-                    alt="flowerpot"
-                    width={70}
-                    height={38}
                 />
+                ))}
+                <div className="flex-shrink-0 ml-auto">
+                <Image src="/flowerpot.png" alt="flowerpot" width={70} height={38} />
                 </div>
             </div>
-            {/* Shelf shadow strip */}
             <div className="h-1.5 bg-rosewood/40"></div>
             </div>
 
             {/* Info panel */}
             {selectedBook ? (
             <div className="bg-[#fce8f0] border-2 border-raspberry shadow-[3px_3px_0px_#c0396b] p-4 relative">
-                {/* Corner accents */}
                 <span className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-raspberry"></span>
                 <span className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-raspberry"></span>
                 <span className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-raspberry"></span>
                 <span className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-raspberry"></span>
 
                 <div className="flex flex-col md:flex-row gap-4 items-start">
-                {/* Cover */}
                 <div className="flex-shrink-0 mx-auto md:mx-0 border-2 border-mauve-brown shadow-[3px_3px_0px_#8b5c6e]">
-                    <Image
-                    src={selectedBook.cover}
-                    alt="book cover"
-                    width={120}
-                    height={130}
-                    className="block"
-                    />
+                    <Image src={selectedBook.cover} alt="book cover" width={120} height={130} className="block" />
                 </div>
 
-                {/* Title + author */}
                 <div className="flex flex-col gap-3 flex-1">
                     <div>
                     <h3
@@ -115,49 +77,34 @@ const BookBoard = () => {
                     <div className="flex items-center gap-2 mt-1">
                         <span
                         className="text-mauve-brown text-[8px] px-2 tracking-wide"
-                        style={{
-                            borderTop: "1.5px solid #8b5c6e",
-                            borderBottom: "1.5px solid #8b5c6e",
-                        }}
+                        style={{ borderTop: "1.5px solid #8b5c6e", borderBottom: "1.5px solid #8b5c6e" }}
                         >
                         by {selectedBook.author}
                         </span>
                     </div>
                     </div>
 
-                    {/* Thoughts */}
                     <div className="bg-[#fdf0f4] border-2 border-mauve-brown p-3 relative overflow-hidden">
                     <div
                         className="absolute top-0 left-0 right-0 h-0.5 opacity-30"
-                        style={{
-                        background:
-                            "repeating-linear-gradient(90deg, #8b5c6e 0px, #8b5c6e 4px, transparent 4px, transparent 8px)",
-                        }}
+                        style={{ background: "repeating-linear-gradient(90deg, #8b5c6e 0px, #8b5c6e 4px, transparent 4px, transparent 8px)" }}
                     ></div>
                     <p className="text-raspberry text-[13px] tracking-widest mb-2 flex items-center gap-2">
                         ✦ thoughts
                         <span className="flex-1 h-px bg-mauve-brown opacity-30"></span>
                     </p>
-                    <p className="text-[11px] text-[#5a3a45] leading-relaxed">
-                        {selectedBook.comment}
-                    </p>
+                    <p className="text-[11px] text-[#5a3a45] leading-relaxed">{selectedBook.comment}</p>
                     </div>
                 </div>
                 </div>
             </div>
             ) : (
-            /* Empty state */
             <div className="bg-[#fdf0f4] border-2 border-mauve-brown p-5 relative overflow-hidden">
                 <div
                 className="absolute top-0 left-0 right-0 h-0.5 opacity-30"
-                style={{
-                    background:
-                    "repeating-linear-gradient(90deg, #8b5c6e 0px, #8b5c6e 4px, transparent 4px, transparent 8px)",
-                }}
+                style={{ background: "repeating-linear-gradient(90deg, #8b5c6e 0px, #8b5c6e 4px, transparent 4px, transparent 8px)" }}
                 ></div>
-                <p className="text-[9px] text-mauve-brown text-center tracking-widest">
-                ✦ click a book to see details ✦
-                </p>
+                <p className="text-[9px] text-mauve-brown text-center tracking-widest">✦ click a book to see details ✦</p>
             </div>
             )}
         </div>

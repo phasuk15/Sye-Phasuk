@@ -1,0 +1,182 @@
+[
+    {
+        "id": 1,
+        "name": "Freiren",
+        "status": "completed",
+        "cover": "/covers/anime/frieren.jpg",
+        "fave_char": "Frieren",
+        "rating": 5,
+        "comment": "Such a soft and cozy fantasy watch, I loved it sm. The action scenes balanced very well with the slice of life feel.  "
+    },
+    {
+        "id": 2,
+        "name": "Mob Psycho",
+        "status": "completed",
+        "cover": "/covers/anime/mob.jpg",
+        "fave_char": "Mob",
+        "rating": 5,
+        "comment": "Animation was unique and crazy, fight scenes go hard. Mob is a cutie and I loved his journey to self-acceptance <3."
+    },
+    {
+        "id": 3,
+        "name": "Mashle",
+        "status": "completed",
+        "cover": "/covers/anime/mashle.jpg",
+        "fave_char": "Mash",
+        "rating": 4,
+        "comment": "Same creator as Mob Psycho so I had a great time with this anime. Love the theme of OP protagonists with awkward personalities, they are so adorable. His strength is also hilariously ridiculous. ."
+    },
+    {
+        "id": 4,
+        "name": "Apothecary Diaries",
+        "status": "completed",
+        "cover": "/covers/anime/apothecary.jpg",
+        "fave_char": "Maomao",
+        "rating": 5,
+        "comment": "Loved the factual and scientific side of it but the romance was so slow 🥲. Maomao is adorable and so intelligent but so cold to Jinshi </3."
+    },
+    {
+        "id": 5,
+        "name": "Blue Lock",
+        "status": "season 1",
+        "cover": "/covers/anime/bluelock.jpg",
+        "fave_char": "Isagi",
+        "rating": 3,
+        "comment": "Not the biggest fan of football but I learnt some stuff about the game I guess. Didn't really stand out that much."
+    },
+    {
+        "id": 6,
+        "name": "One Punch Man",
+        "status": "completed",
+        "cover": "/covers/anime/onepunch.jpg",
+        "fave_char": "Saitama",
+        "rating": 5,
+        "comment": "Another awkward but OP protagonist, I love it. Insane fight scenes. ."
+    },
+    {
+        "id": 7,
+        "name": "Bungou Stray Dogs",
+        "status": "completed",
+        "cover": "/covers/anime/bungou.jpg",
+        "fave_char": "Dazai",
+        "rating": 5,
+        "comment": "Really gripping plot and so many creative and unique character designs. I think we basically binged everything in a week :D."
+    },
+    {
+        "id": 8,
+        "name": "Solo Levelling",
+        "status": "completed",
+        "cover": "/covers/anime/solo.jpg",
+        "fave_char": "Igris",
+        "rating": 4,
+        "comment": "Classic protag getting OP journey and then becomes unbeatable. It was one of the first light novels I read so I enjoyed the plot and the animation was really good."
+    },
+    {
+        "id": 9,
+        "name": "Haikyuu",
+        "status": "completed",
+        "cover": "/covers/anime/haikyuu.jpg",
+        "fave_char": "Bokuto",
+        "rating": 4,
+        "comment": "First sport anime I ever watched and it was the best thing I ever saw in high school. I loved all the characters and all the matches and now I play volleyball."
+    },
+    {
+        "id": 10,
+        "name": "Bunny Senpai",
+        "status": "completed",
+        "cover": "/covers/anime/bunny.jpg",
+        "fave_char": "Sakurajima",
+        "rating": 4,
+        "comment": "Not usually a fan of realistic mundane highschool animes but this was alright, it was quite beautiful."
+    },
+    {
+        "id": 12,
+        "name": "Nichijou",
+        "status": "dropped",
+        "cover": "/covers/anime/nichi.jpg",
+        "fave_char": "Nano",
+        "rating": 3,
+        "comment": "It's a silly, slice of life anime about school girls with highly ridiculous moments. Not really my kinda anime."
+    },
+    {
+        "id": 13,
+        "name": "Love is War",
+        "status": "dropped",
+        "cover": "/covers/anime/love.jpg",
+        "fave_char": "Shinomiya",
+        "rating": 3,
+        "comment": "A good premise and it has good moments but it got a bit boring."
+    },
+    {
+        "id": 14,
+        "name": "Your Lie in April",
+        "status": "completed",
+        "cover": "/covers/anime/april.jpg",
+        "fave_char": "Miyazono",
+        "rating": 4,
+        "comment": "Beautiful anime but super sad 😭. Starting to realise I dont think I do super well with anime that predominantly deals emotions and feelings outright that well. "
+    },
+    {
+        "id": 15,
+        "name": "Erased",
+        "status": "completed",
+        "cover": "/covers/anime/erased.jpg",
+        "fave_char": "Sachiko Fujinuma",
+        "rating": 3,
+        "comment": "Super thrilling and gripping as it progressed, I was so invested until it got to the end and then it didn't really make sense to me D:"
+    },
+    {
+        "id": 16,
+        "name": "Dandadan",
+        "status": "watching",
+        "cover": "/covers/anime/dandadan.jpg",
+        "fave_char": "Turbo Granny",
+        "rating": 4,
+        "comment": "Its an incredibly fun anime with so many funny moments and fight scenes. Love the concept, not the highschool nudity as much though. "
+    },
+    {
+        "id": 17,
+        "name": "Dr Stone",
+        "status": "completed",
+        "cover": "/covers/anime/drstone.jpg",
+        "fave_char": "Gen Asagi",
+        "rating": 5,
+        "comment": "I loved the scientific aspect of it and the ongoing mystery. Strong plot and strong characters, it was amazingggg."
+    },
+    {
+        "id": 18,
+        "name": "God of Highschool",
+        "status": "completed",
+        "cover": "/covers/anime/god.jpg",
+        "fave_char": "Mori",
+        "rating": 4,
+        "comment": "I loveee the plot and the world building of this anime although the webtoon was so much better, I don't think the anime did it justice 🙂‍↕️"
+    },
+    {
+        "id": 19,
+        "name": "Chainsaw Man",
+        "status": "completed",
+        "cover": "/covers/anime/chainsaw.jpg",
+        "fave_char": "Pochita",
+        "rating": 4,
+        "comment": "It was sooo good, we binged it I think. Unique characters and storyline, I loved their group dynamic very much it was so dumb."
+    },
+    {
+        "id": 20,
+        "name": "Spy x Family",
+        "status": "completed",
+        "cover": "/covers/anime/spyfamily.jpg",
+        "fave_char": "Anya",
+        "rating": 5,
+        "comment": "Super cute family dynamic all with their own quirks."
+    },
+    {
+        "id": 21,
+        "name": "Black Clover",
+        "status": "watching",
+        "cover": "/covers/anime/blackclover.jpg",
+        "fave_char": "",
+        "rating": 4,
+        "comment": "."
+    }
+]

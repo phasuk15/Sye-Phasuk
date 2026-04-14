@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import { supabase } from "@/lib/supabaseClient";
 import Star from "../components/icons/Star";
+import animeData from "../data/anime.json";
 
 interface AnimeType {
     id: number;
@@ -15,34 +15,17 @@ interface AnimeType {
     comment: string;
 }
 
+const animeList: AnimeType[] = animeData;
+
 const AnimeCard = () => {
     const [selected, setSelected] = useState<AnimeType | null>(null);
-    const [animeList, setAnimeList] = useState<AnimeType[]>([]);
-    const [loading, setLoading] = useState(true);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(true);
     const scrollRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        const fetchAnime = async () => {
-        const { data, error } = await supabase
-            .schema("SyePhasuk")
-            .from("AnimeList")
-            .select("*");
-        if (error) {
-            console.error("Error fetching anime:", error);
-        } else {
-            setAnimeList(data || []);
-        }
-        setLoading(false);
-        };
-        fetchAnime();
-    }, []);
-
-    // Recheck scroll arrows after list loads
-    useEffect(() => {
         updateScrollButtons();
-    }, [animeList]);
+    }, []);
 
     const updateScrollButtons = () => {
         const el = scrollRef.current;
@@ -82,130 +65,120 @@ const AnimeCard = () => {
             <span className="flex-1 h-px bg-mauve-brown opacity-30"></span>
             </p>
 
-            {loading ? (
-            <p className="text-[9px] text-mauve-brown tracking-widest text-center animate-pulse py-8">
-                ✦ loading... ✦
-            </p>
-            ) : (
-            /* Scroll strip container */
+            {/* Scroll strip container */}
             <div className="relative">
 
-                {/* Left fade + arrow */}
-                <div
+            {/* Left fade + arrow */}
+            <div
                 className={`absolute left-0 top-0 bottom-0 z-10 w-14 flex items-center justify-start
                             bg-gradient-to-r from-light-pink via-light-pink/80 to-transparent
                             pointer-events-none transition-opacity duration-200
                             ${canScrollLeft ? "opacity-100" : "opacity-0"}`}
-                >
+            >
                 <button
-                    onClick={() => scroll("left")}
-                    className="pointer-events-auto w-8 h-8 flex items-center justify-center
+                onClick={() => scroll("left")}
+                className="pointer-events-auto w-8 h-8 flex items-center justify-center
                             bg-rosewood border-2 border-rosewood text-light-pink
                             text-base font-bold shadow-[2px_2px_0px_#412722]
                             hover:bg-raspberry transition-colors focus:outline-none ml-1"
                 >
-                    ‹
+                ‹
                 </button>
-                </div>
+            </div>
 
-                {/* Right fade + arrow */}
-                <div
+            {/* Right fade + arrow */}
+            <div
                 className={`absolute right-0 top-0 bottom-0 z-10 w-14 flex items-center justify-end
                             bg-gradient-to-l from-light-pink via-light-pink/80 to-transparent
                             pointer-events-none transition-opacity duration-200
                             ${canScrollRight ? "opacity-100" : "opacity-0"}`}
-                >
+            >
                 <button
-                    onClick={() => scroll("right")}
-                    className="pointer-events-auto w-8 h-8 flex items-center justify-center
+                onClick={() => scroll("right")}
+                className="pointer-events-auto w-8 h-8 flex items-center justify-center
                             bg-rosewood border-2 border-rosewood text-light-pink
                             text-base font-bold shadow-[2px_2px_0px_#412722]
                             hover:bg-raspberry transition-colors focus:outline-none mr-1"
                 >
-                    ›
+                ›
                 </button>
-                </div>
+            </div>
 
-                {/* The scrollable row */}
-                <div
+            {/* Scrollable row */}
+            <div
                 ref={scrollRef}
                 onScroll={updateScrollButtons}
                 className="flex gap-3 overflow-x-auto scroll-smooth py-2 px-1"
                 style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-                >
+            >
                 {animeList.map((anime) => {
-                    const isSelected = selected?.id === anime.id;
-                    return (
+                const isSelected = selected?.id === anime.id;
+                return (
                     <button
-                        key={anime.id}
-                        onClick={() => handleSelect(anime)}
-                        className="relative flex-shrink-0 focus:outline-none group/card"
-                        style={{ width: 150 }}
+                    key={anime.id}
+                    onClick={() => handleSelect(anime)}
+                    className="relative flex-shrink-0 focus:outline-none group/card"
+                    style={{ width: 150 }}
                     >
-                        {/* Cover + overlay wrapper */}
-                        <div
+                    <div
                         className={`relative overflow-hidden border-2 transition-all duration-200
-                            ${isSelected
+                        ${isSelected
                             ? "border-raspberry scale-105 shadow-[0_4px_0px_#c0396b]"
                             : "border-mauve-brown group-hover/card:border-raspberry group-hover/card:scale-105 group-hover/card:shadow-[0_4px_0px_#c0396b]"
-                            }`}
+                        }`}
                         style={{ width: 150, height: 210 }}
-                        >
+                    >
                         <Image
-                            src={anime.cover}
-                            alt={anime.name}
-                            width={150}
-                            height={210}
-                            className="block w-full h-full object-cover"
+                        src={anime.cover}
+                        alt={anime.name}
+                        width={150}
+                        height={210}
+                        className="block w-full h-full object-cover"
                         />
 
-                        {/* Dark gradient overlay — shows on hover or when selected */}
+                        {/* Overlay */}
                         <div
-                            className={`absolute inset-0 flex flex-col justify-end p-2.5 transition-opacity duration-200
+                        className={`absolute inset-0 flex flex-col justify-end p-2.5 transition-opacity duration-200
                             ${isSelected ? "opacity-100" : "opacity-0 group-hover/card:opacity-100"}`}
-                            style={{
+                        style={{
                             background:
-                                "linear-gradient(to top, rgba(65,39,34,0.95) 0%, rgba(65,39,34,0.6) 50%, transparent 100%)",
-                            }}
+                            "linear-gradient(to top, rgba(65,39,34,0.95) 0%, rgba(65,39,34,0.6) 50%, transparent 100%)",
+                        }}
                         >
-                            <p className="text-light-pink font-bold leading-snug mb-1 ">
+                        <p className="text-light-pink font-bold leading-snug mb-1">
                             {anime.name}
-                            </p>
-
-                            <div
+                        </p>
+                        <div
                             className="flex items-center gap-1.5 pt-1.5"
                             style={{ borderTop: "1px solid rgba(247,221,228,0.25)" }}
-                            >
+                        >
                             <span
-                                className="text-[5px] text-light-pink/60 tracking-wide px-1.5"
-                                style={{
+                            className="text-[9px] text-light-pink/60 tracking-wide px-1.5"
+                            style={{
                                 borderTop: "1px solid rgba(247,221,228,0.35)",
                                 borderBottom: "1px solid rgba(247,221,228,0.35)",
-                                }}
+                            }}
                             >
-                                {anime.status}
+                            {anime.status}
                             </span>
-                            </div>
-
-                            {/* Inline star rating */}
-                            <div className="mt-1">
+                        </div>
+                        <div className="mt-1">
                             <Star value={anime.rating} />
-                            </div>
+                        </div>
                         </div>
 
-                        {/* Selected indicator pip */}
+                        {/* Selected pip */}
                         {isSelected && (
-                            <div className="absolute top-1.5 right-1.5 w-2 h-2 bg-raspberry border border-light-pink" />
+                        <div className="absolute top-1.5 right-1.5 w-2 h-2 bg-raspberry border border-light-pink" />
                         )}
-                        </div>
+                    </div>
                     </button>
-                    );
+                );
                 })}
-                </div>
             </div>
-            )}
+            </div>
 
-            {/* Detail panel below strip */}
+            {/* Detail panel */}
             {selected ? (
             <div className="bg-[#fce8f0] border-2 border-raspberry shadow-[3px_3px_0px_#c0396b] p-4 relative">
                 <span className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-raspberry"></span>
@@ -214,8 +187,7 @@ const AnimeCard = () => {
                 <span className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-raspberry"></span>
 
                 <div className="flex flex-col md:flex-row gap-4">
-                {/* Cover */}
-                <div className="flex-shrink-0 mx-auto md:mx-0 ">
+                <div className="flex-shrink-0 mx-auto md:mx-0">
                     <Image
                     src={selected.cover}
                     alt={selected.name}
@@ -226,7 +198,6 @@ const AnimeCard = () => {
                     />
                 </div>
 
-                {/* Info */}
                 <div className="flex flex-col gap-3 flex-1">
                     <div>
                     <h3
@@ -253,7 +224,6 @@ const AnimeCard = () => {
 
                     <Star value={selected.rating} />
 
-                    {/* Thoughts */}
                     <div className="bg-[#fdf0f4] border-2 border-mauve-brown p-3 relative overflow-hidden">
                     <div
                         className="absolute top-0 left-0 right-0 h-0.5 opacity-30"
