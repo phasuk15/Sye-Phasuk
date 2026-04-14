@@ -17,13 +17,13 @@ const songs = [
         title: "My Way",
         artist: "KATSEYE",
         url: "https://youtu.be/1P8BbTY8gWo?si=_GPfk2cFmIXiAT7C",
-        cover: "/covers/music//katseye.jpg",
+        cover: "/covers/music/katseye.jpg",
     },
     {
         title: "Forbidden Friendship",
         artist: "John Powell",
         url: "https://youtu.be/96NgGuKQcmo?si=UHYxF9EAiPZa2p_h",
-        cover: "/covers/music//httyd.jpg",
+        cover: "/covers/music/httyd.jpg",
     },
 ];
 
