@@ -51,7 +51,7 @@ const EssayCard = ({
                 "repeating-linear-gradient(90deg, #8b5c6e 0px, #8b5c6e 4px, transparent 4px, transparent 8px)",
             }}
           />
-          <p className="text-raspberry text-[8px] tracking-widest mb-2 flex items-center gap-2">
+          <p className="text-raspberry text-[11px] tracking-widest mb-2 flex items-center gap-2">
             ✦ about
             <span className="flex-1 h-px bg-mauve-brown opacity-30"></span>
           </p>

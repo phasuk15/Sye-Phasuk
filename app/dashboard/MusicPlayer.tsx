@@ -11,19 +11,19 @@ const songs = [
         title: "Nod Krai Theme",
         artist: "Aurora",
         url: "https://youtu.be/RuXa_yxZMGI?si=KL1ezMZpqlJYN9ew",
-        cover: "/music/aurora.avif",
+        cover: "/covers/music/aurora.avif",
     },
     {
         title: "My Way",
         artist: "KATSEYE",
         url: "https://youtu.be/1P8BbTY8gWo?si=_GPfk2cFmIXiAT7C",
-        cover: "/katseye.jpg",
+        cover: "/covers/music//katseye.jpg",
     },
     {
         title: "Forbidden Friendship",
         artist: "John Powell",
         url: "https://youtu.be/96NgGuKQcmo?si=UHYxF9EAiPZa2p_h",
-        cover: "/httyd.jpg",
+        cover: "/covers/music//httyd.jpg",
     },
 ];
 
