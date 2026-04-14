@@ -15,8 +15,11 @@ export default function GalleryPage() {
 
   const artworks = files.map((file) => ({
     src: `/artwork/${file}`,
-    caption: file.replace(/\.[^/.]+$/, ""), 
-  }));
+    caption: file
+      .replace(/\.[^/.]+$/, "")     // strip extension
+      .replace(/[-_]/g, " ")        // hyphens/underscores → spaces
+      .replace(/\b\w/g, (c) => c.toUpperCase()), // title case
+      }));
 
   return <GalleryFullClient artworks={artworks} />;
 }
