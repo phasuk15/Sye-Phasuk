@@ -47,7 +47,7 @@ const BookBoard = () => {
                 />
                 ))}
                 <div className="flex-shrink-0 ml-auto">
-                <Image src="/flowerpot.png" alt="flowerpot" width={70} height={38} />
+                <Image src="/icons/flowerpot.png" alt="flowerpot" width={70} height={38} />
                 </div>
             </div>
             <div className="h-1.5 bg-rosewood/40"></div>
