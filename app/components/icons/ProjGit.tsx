@@ -21,7 +21,7 @@ const ProjectGithub: React.FC<ProjectGithubProps> = ({
       {...props}
     >
       <Image
-        src="/github.png"
+        src="/icons/github.png"
         alt={alt}
         width={size}
         height={size}
